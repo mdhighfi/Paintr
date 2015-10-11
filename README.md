@@ -2,7 +2,7 @@
 
 [Heroku link][heroku] **(create heroku site)**
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://paintr-pics.herokuapp.com/
 
 ## Minimum Viable Product
 
