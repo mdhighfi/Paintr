@@ -12,10 +12,12 @@ Paintr is a web application inspired by Flickr built using Ruby on Rails and Rea
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Create, read, edit, and delete photos
+- [ ] Create, view, edit, and delete albums
+- [ ] Upload and delete photos
 - [ ] Organize photos within albums
 - [ ] Tag photos with multiple tags and search photos by tag
-- [ ] Search public photos by tag, artist, or style
+- [ ] Search public photos by tag, artist, or medium
+- [ ]
 
 ## Design Docs
 * [View Wireframes][view]
