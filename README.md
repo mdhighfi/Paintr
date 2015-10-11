@@ -1,13 +1,12 @@
 # Paintr
 
-[Heroku link][heroku]
+[Heroku link][heroku] **(create heroku site)**
 
 [heroku]: http://www.herokuapp.com
 
 ## Minimum Viable Product
 
-Paintr is a web application inspired by Flickr built using Ruby on Rails
-and React.js. Paintr allows users to:
+Paintr is a web application inspired by Flickr built using Ruby on Rails and React.js. Paintr allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
