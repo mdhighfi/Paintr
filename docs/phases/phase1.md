@@ -13,8 +13,8 @@
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* notes/index.json.jbuilder
-* notes/show.json.jbuilder
+* photos/index.json.jbuilder
+* photos/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
