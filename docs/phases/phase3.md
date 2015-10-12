@@ -1,4 +1,4 @@
-# Phase 3: Albums and Tags (2 days)
+# Phase 3: Albums and Tags (2.5 days)
 
 ## Rails
 ### Models
@@ -7,7 +7,7 @@
 * Tagging
 
 ### Controllers
-* Api::NotebooksController (create, destroy, index, show, update)
+* Api::AlbumsController (create, destroy, index, show, update)
 
 ### Views
 * albums/index.json.jbuilder
