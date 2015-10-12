@@ -15,7 +15,7 @@ Paintr is a web application inspired by Flickr built using Ruby on Rails and Rea
 - [ ] Tag photos with multiple tags
 - [ ] Search your own photos by tag, or medium
 - [ ] Search all users photos by tag, artist, or medium
-- [ ] Comment on photos. 
+- [ ] Comment on photos.
 
 ## Design Docs
 * [View Wireframes][view]
