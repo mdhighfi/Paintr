@@ -9,25 +9,26 @@
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+* PhotosIndex
+  - PhotosIndexItem
+* PhotoForm
 
 ### Stores
-* Note
+* Photo
 
 ### Actions
-* ApiActions.receiveAllNotes
-* ApiActions.receiveSingleNote
-* ApiActions.deleteNote
+* ApiActions.receiveAllPhotos
+* ApiActions.receiveSinglePhoto
+* ApiActions.deletePhoto
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
-* ApiUtil.editNote
-* ApiUtil.destroyNote
+* ApiUtil.fetchAllPhotos
+* ApiUtil.fetchSinglePhoto
+* ApiUtil.createPhoto
+* ApiUtil.editPhoto
+* ApiUtil.destroyPhoto
 
 ## Gems/Libraries
 * Flux Dispatcher
 * Twitter Bootstrap
+* Paperclip
