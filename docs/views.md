@@ -21,8 +21,8 @@
 ## Photo Form
 ![photo-form]
 
-## Component Heirarchy
-![component-heirarchy]
+## Component Hierarchy
+![component-hierarchy]
 
 [new-user]: ./wireframes/new_user.jpg
 [new-session]: ./wireframes/new_session.jpg
@@ -31,4 +31,4 @@
 [photo-index]: ./wireframes/photo_index.jpg
 [album-form]: ./wireframes/album_form.jpg
 [photo-form]: ./wireframes/photo_form.jpg
-[component-heirarchy]: ./wireframes/component_heirarchy.jpg
+[component-hierarchy]: ./wireframes/component_hierarchy.jpg
