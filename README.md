@@ -8,13 +8,14 @@
 
 Paintr is a web application inspired by Flickr built using Ruby on Rails and React.js. Paintr allows users to:
 
-- [ ] Create an account
-- [ ] Log in / Log out
-- [ ] Upload, view, delete photos, and edit info for photos
-- [ ] Create, view, edit, and delete albums
-- [ ] Tag photos with multiple tags
-- [ ] Search your own photos by tag, or medium
-- [ ] Search all users photos by tag, artist, or medium
+- [ ] Create an account <!-- phase 1 -->
+- [ ] Log in / Log out <!-- phase 1 -->
+- [ ] Upload, view, delete photos, and edit info for photos <!-- phase 2 -->
+- [ ] Create, view, edit, and delete albums <!-- phase 3 -->
+- [ ] Tag photos with multiple tags <!-- phase 3 -->
+- [ ] Search your own photos by tag, or medium <!-- phase 3 -->
+- [ ] Search all users photos by tag, artist, or medium <!-- phase 3 -->
+- [ ] Comment on photos. <!-- phase 4 -->
 
 ## Design Docs
 * [View Wireframes][view]
@@ -45,7 +46,7 @@ Photos can be created, read, edited and destroyed in the browser. Lastly, while 
 
 [Details][phase-two]
 
-### Phase 3: Albums and Tags (2 days)
+### Phase 3: Albums and Tags (2.5 days)
 
 Phase 3 adds organization to the Photos. Photos belong to an Album, which has
 its own `Index` view. Create JSON API for Albums. Photos can also now be
@@ -55,35 +56,32 @@ extend this to searching for other users tags. I will then add the ability to se
 
 [Details][phase-three]
 
-### Phase 4: Allow Complex Styling in Notes (1 day)
+### Phase 4: Comments (1 day)
 
-Using quill.js, allow for complex styling of notes.
+Add the ability to make comments on both your own and on other user's photos.
 
 [Details][phase-four]
 
-### Phase 5: Reminders and Garbage Collection (1 day)
-
-Phase 5 introduces two new features. First, users can set reminders on notes
-which will at the time they are set for prompt the user to review and edit the
-given note. In addition, I will implement a feature that asks users to review
-notes once they reach a certain age and ask whether they should be kept,
-archived, or deleted.
-
-[Details][phase-five]
-
-### Phase 6: Styling Cleanup and Seeding (1 day)
+### Phase 5: Styling Cleanup and Seeding (1.5 days)
 
 Bootstrap will have been used to keep things organized up until now, but in
-Phase 6 I will add styling flourishes and make modals out of some elements (like
-the NotebookForm).
+Phase 5 I will add more custom styling.
 
 ### Bonus Features (TBD)
-- [ ] Users can follow and unfollow other users
-- [ ] Users can make comments on albums
+
+#### Album Bonuses
 - [ ] Photos can be arranged in different orders within albums
-- [ ] Create an option for private photos that are not visible to other users
-- [ ] Ask if users want to delete all associated photos from albums
+- [ ] Users can make comments on albums
+- [ ] Ask if users want to delete all associated photos from albums when deleting an album
+
+#### User Bonuses
+- [ ] Users can follow and unfollow other users
+- [ ] Create artist profiles where a user can describe their work, influences, favorite mediums, etc.
+
+#### Photo Bonuses
 - [ ] Mark whether a painting is for sale
+- [ ] Create an option for private photos that are not visible to other users
+- [ ] Add the ability to drag and drop photos in to upload
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
