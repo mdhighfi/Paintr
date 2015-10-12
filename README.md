@@ -1,6 +1,6 @@
 # Paintr
 
-[Heroku link][heroku] **(create heroku site)**
+[Heroku link][heroku]
 
 [heroku]: https://paintr-pics.herokuapp.com/
 
@@ -8,14 +8,14 @@
 
 Paintr is a web application inspired by Flickr built using Ruby on Rails and React.js. Paintr allows users to:
 
-- [ ] Create an account <!-- phase 1 -->
-- [ ] Log in / Log out <!-- phase 1 -->
-- [ ] Upload, view, delete photos, and edit info for photos <!-- phase 2 -->
-- [ ] Create, view, edit, and delete albums <!-- phase 3 -->
-- [ ] Tag photos with multiple tags <!-- phase 3 -->
-- [ ] Search your own photos by tag, or medium <!-- phase 3 -->
-- [ ] Search all users photos by tag, artist, or medium <!-- phase 3 -->
-- [ ] Comment on photos. <!-- phase 4 -->
+- [ ] Create an account
+- [ ] Log in / Log out
+- [ ] Upload, view, delete photos, and edit info for photos
+- [ ] Create, view, edit, and delete albums
+- [ ] Tag photos with multiple tags
+- [ ] Search your own photos by tag, or medium
+- [ ] Search all users photos by tag, artist, or medium
+- [ ] Comment on photos. 
 
 ## Design Docs
 * [View Wireframes][view]
