@@ -1,8 +1,8 @@
-# Phase 3: Notebooks and Tags (2 days)
+# Phase 3: Albums and Tags (2 days)
 
 ## Rails
 ### Models
-* Notebook
+* Album
 * Tag
 * Tagging
 
@@ -10,30 +10,30 @@
 * Api::NotebooksController (create, destroy, index, show, update)
 
 ### Views
-* notebooks/index.json.jbuilder
-* notebooks/show.json.jbuilder
+* albums/index.json.jbuilder
+* albums/show.json.jbuilder
 * tags/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* NotebooksIndex
-  - NotebookIndexItem
-* NotebookForm
+* AlbumsIndex
+  - AlbumIndexItem
+* AlbumForm
 * SearchIndex
 
 ### Stores
-* Notebook
+* Album
 
 ### Actions
-* ApiActions.receiveAllNotebooks
-* ApiActions.receiveSingleNotebook
-* ApiActions.deleteNotebook
+* ApiActions.receiveAllAlbums
+* ApiActions.receiveSingleAlbum
+* ApiActions.deleteAlbum
 
 ### ApiUtil
-* ApiUtil.fetchAllNotebooks
-* ApiUtil.fetchSingleNotebook
-* ApiUtil.createNotebook
-* ApiUtil.editNotebook
-* ApiUtil.destroyNotebook
+* ApiUtil.fetchAllAlbums
+* ApiUtil.fetchSingleAlbum
+* ApiUtil.createAlbum
+* ApiUtil.editAlbum
+* ApiUtil.destroyAlbum
 
 ## Gems/Libraries
