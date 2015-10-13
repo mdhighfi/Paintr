@@ -31,4 +31,4 @@
 ## Gems/Libraries
 * Flux Dispatcher
 * Twitter Bootstrap
-* Paperclip
+* Cloudinary
