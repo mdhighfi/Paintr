@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in!(@user)
-      redirect_to posts_url
+      redirect_to root_url
     else
       flash[:errors] = @user.errors.full_messages
       redirect_to new_user_url
