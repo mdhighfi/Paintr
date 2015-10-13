@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20151013181957) do
     t.string   "medium",      null: false
     t.string   "surface",     null: false
     t.integer  "author_id",   null: false
-    t.integer  "album_id",    null: false
+    t.integer  "album_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
