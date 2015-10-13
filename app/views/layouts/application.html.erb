@@ -9,6 +9,10 @@
 <body>
 
 <% if current_user  %>
+<script>
+  window.CURRENT_USER_ID = <%= current_user.id %>
+  window.CURRENT_USERNAME = "<%= current_user.username %>"
+</script>
   <%= "Welcome, #{current_user.username}" %>
   <%= button_to "Sign Out", session_url, method: :delete %>
 <% else %>
