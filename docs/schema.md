@@ -9,7 +9,7 @@ description | string    |
 medium      | string    | not null, inclusion in [Oil, Acrylic, Watercolor, Gouache], indexed
 surface     | string    | not null, inclusion in [Canvas, Paper, Wood, Metal, Marble], indexed
 author_id   | integer   | not null, foreign key (references users), indexed
-album_id    | integer   | not null, foreign key (references albums), indexed
+album_id    | integer   | foreign key (references albums), indexed
 
 
 ## albums
