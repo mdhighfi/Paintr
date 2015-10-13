@@ -1,8 +1,8 @@
 User.create(username: "vincent", password: "password")
-# User.create(username: "vincent", password: "password")
-# User.create(username: "vincent", password: "password")
-# User.create(username: "vincent", password: "password")
-# User.create(username: "vincent", password: "password")
+User.create(username: "leonardo", password: "password")
+User.create(username: "donatello", password: "password")
+User.create(username: "michelangelo", password: "password")
+User.create(username: "rafael", password: "password")
 
 # create_table "users", force: :cascade do |t|
 #   t.string   "username",        null: false
@@ -12,12 +12,32 @@ User.create(username: "vincent", password: "password")
 #   t.datetime "updated_at",      null: false
 # end
 
-# Photo.create(
-#   title: "The Yellow House",
-#   medium: "oil",
-#   surface: "canvas",
-#   author_id: User.find_by_username("vincent").id
-# )
+Photo.create!(
+  title: "The Yellow House",
+  medium: 'oil',
+  surface: 'canvas',
+  # medium: :oil,
+  # surface: :canvas,
+  author_id: User.find_by_username("vincent").id
+)
+
+Photo.create!(
+  title: "Self-Portrait",
+  medium: 'oil',
+  surface: 'canvas',
+  # medium: :oil,
+  # surface: :canvas,
+  author_id: User.find_by_username("vincent").id
+)
+
+Photo.create!(
+  title: "Still Life: Vase with Twelve Sunflowers",
+  medium: 'oil',
+  surface: 'canvas',
+  # medium: :oil,
+  # surface: :canvas,
+  author_id: User.find_by_username("vincent").id
+)
 
 # create_table "photos", force: :cascade do |t|
 #   t.string   "title",       null: false
@@ -25,7 +45,7 @@ User.create(username: "vincent", password: "password")
 #   t.string   "medium",      null: false
 #   t.string   "surface",     null: false
 #   t.integer  "author_id",   null: false
-#   t.integer  "album_id",    null: false
+#   t.integer  "album_id"
 #   t.datetime "created_at",  null: false
 #   t.datetime "updated_at",  null: false
 # end
