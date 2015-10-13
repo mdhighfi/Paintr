@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
     if user
       log_in!(user)
-      redirect_to posts_url
+      redirect_to root_url
     else
       flash.now[:errors] = ["Bad username / password combo"]
       render :new
