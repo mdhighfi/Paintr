@@ -3,11 +3,17 @@
 <form action="<%= session_url %>" method="post">
   <%= auth_token %>
 
-  <label for="user_username">Username: </label>
+  <label for="user_username">Username: </label><br/>
   <input id="user_username" type="text" name="user[username]" >
-
-  <label for="user_password">Password: </label>
+<br/>
+<br/>
+  <label for="user_password">Password: </label><br/>
   <input id="user_password" type="password" name="user[password]">
-
+<br/>
+<br/>
   <input type="submit" value="Sign In">
 </form>
+
+<br/>
+
+<p>New user? <%= link_to "Sign up", new_user_url %> or try a <%= link_to "demo account", new_user_url%>.</p>
