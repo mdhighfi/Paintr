@@ -5,14 +5,12 @@ $(function () {
 
   var rootEl = document.getElementById('content');
 
-  React.render((
-    <Router>
-      <Route path="/" component={App}>
-        <Route path="photos/" component={IndexRoute}></Route>
-        <Route
-          path="user/:userId/photos/:photoId"
-          components={{photo: PhotoDetail}}/>
-      </Route>
-    </Router>
-  ), rootEl);
+  var routes = (
+    <Route path="/" component={App}>
+      <IndexRoute compenent={PhotosIndex} />
+      <Route path="photos/:photoId" component={PhotoDetail} />
+    </Route>
+  );
+
+  React.render(<Router>{routes}</Router>, rootEl);
 });
