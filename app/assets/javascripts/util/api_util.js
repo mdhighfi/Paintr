@@ -1,4 +1,15 @@
 window.ApiUtil = {
+  signOut: function(){
+    $.ajax({
+      url: "session",
+      method: "DELETE",
+      success: function() {
+        console.log("signed out");
+        window.location = "/";
+      }
+    });
+  },
+
   fetchAllPhotos: function () {
     $.ajax({
       url: "api/photos",
