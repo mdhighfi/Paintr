@@ -17,22 +17,11 @@ var Navbar = React.createClass({
             <ul className="nav navbar-nav">
               <li className="active"><a href="#">You <span className="sr-only">(current)</span></a></li>
               <li><a href="#">Explore</a></li>
-              <li className="dropdown">
-                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>
-                <ul className="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" className="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li role="separator" className="divider"></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
+
             </ul>
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <form className="navbar-form navbar-right" role="search">
+                <form className="navbar-form" role="search">
                   <div className="form-group">
                     <input type="text" className="form-control" placeholder="tag, artist, medium"/>
                   </div>
@@ -40,7 +29,12 @@ var Navbar = React.createClass({
                 </form>
               </li>
               <li><a href="#">Upload</a></li>
-              <li><a href="#">{window.CURRENT_USERNAME}</a></li>
+              <li className="dropdown">
+                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{window.CURRENT_USERNAME}<span className="caret"></span></a>
+                <ul className="dropdown-menu">
+                  <li><a href="#" onClick={window.ApiUtil.signOut}>Sign Out</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>
