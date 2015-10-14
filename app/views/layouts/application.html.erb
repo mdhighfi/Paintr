@@ -13,13 +13,6 @@
   window.CURRENT_USER_ID = <%= current_user.id %>
   window.CURRENT_USERNAME = "<%= current_user.username %>"
 </script>
-  <%= "Welcome, #{current_user.username}" %>
-  <%= button_to "Sign Out", session_url, method: :delete %>
-<% else %>
-  <%= link_to "Sign In", new_session_url, method: :get %> if you already
-  have an account.
-  <%= link_to "Sign Up", new_user_url, method: :get %> if you already
-  have an account.
 <% end %>
 
 <%= flash[:errors] %>
