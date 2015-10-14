@@ -20,7 +20,7 @@ window.PhotosIndex = React.createClass({
 
   render: function () {
     return(
-      <ul>
+      <ul className="extra-margin-top">
         {this.state.photos.map(function (photo) {
           return <PhotoIndexItem key={photo.id} photo={photo} />;
         })}

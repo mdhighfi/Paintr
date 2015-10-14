@@ -6,6 +6,7 @@
    content: "";
    background: url('starry_night_small.jpg');
    background-size: cover;
+   background-attachment: fixed;
    opacity: 0.4;
    top: 0;
    left: 0;
@@ -13,4 +14,12 @@
    right: 0;
    position: absolute;
    z-index: -1;
+ }
+
+ li {
+   float: left;
+ }
+
+ .extra-margin-top {
+   margin-top: 90px;
  }

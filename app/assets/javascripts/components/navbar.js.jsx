@@ -1,7 +1,26 @@
 var Navbar = React.createClass({
+  componentDidMount: function() {
+    document.getElementById("upload_widget_opener").addEventListener("click", function() {
+
+      cloudinary.openUploadWidget({
+        cloud_name: 'paintr',
+        upload_preset: 'npkae9ay',
+        theme: 'minimal'
+      },
+      function(error, result) {
+        console.log(error, result) });
+        ApiUtil.createPhoto({
+          image_url: result[0].secure_url,
+          title: 'new_image',
+          description: 'this is a test',
+          medium: 'watercolor',
+          surface: 'paper',
+        });
+    }, false);
+  },
   render: function(){
     return (
-      <nav className="navbar navbar-default">
+      <nav className="navbar navbar-default navbar-fixed-top">
         <div className="container-fluid">
           <div className="navbar-header">
             <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -28,7 +47,7 @@ var Navbar = React.createClass({
                   <button type="submit" className="btn btn-default">Search</button>
                 </form>
               </li>
-              <li><a href="#">Upload</a></li>
+              <li><a href="#" id="upload_widget_opener">Upload</a></li>
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{window.CURRENT_USERNAME}<span className="caret"></span></a>
                 <ul className="dropdown-menu">

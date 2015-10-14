@@ -18,5 +18,6 @@
 //= require react_ujs
 //= require reactrouter.min.js
 //= require cloudinary
+//= require cloudinarywidget.js
 //= require bootstrap-sprockets
 //= require_tree .
