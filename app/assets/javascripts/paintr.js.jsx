@@ -4,10 +4,9 @@ $(function () {
   var IndexRoute = ReactRouter.IndexRoute;
 
   var rootEl = document.getElementById('content');
-
   var routes = (
     <Route path="/" component={App}>
-      <IndexRoute compenent={PhotosIndex} />
+      <IndexRoute component={PhotosIndex} />
       <Route path="photos/:photoId" component={PhotoDetail} />
     </Route>
   );

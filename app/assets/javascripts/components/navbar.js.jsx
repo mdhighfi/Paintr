@@ -34,7 +34,7 @@ var Navbar = React.createClass({
                 <ul className="dropdown-menu">
                   <li><a href="#">My Photos</a></li>
                   <li><a href="#">My Albums</a></li>
-                  <li role="separator" class="divider"></li>
+                  <li role="separator" className="divider"></li>
                   <li><a href="#" onClick={window.ApiUtil.signOut}>Sign Out</a></li>
                 </ul>
               </li>

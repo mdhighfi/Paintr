@@ -1,10 +1,10 @@
-var PhotosIndex = React.createClass({
+window.PhotosIndex = React.createClass({
   getInitialState: function () {
     return { photos: PhotoStore.all() };
   },
 
   _onChange: function () {
-    this.setState({ pokemons: PokemonStore.all() });
+    this.setState({ photos: PhotoStore.all() });
   },
 
   componentDidMount: function () {
