@@ -16,8 +16,7 @@ Photo.create!(
   title: "The Yellow House",
   medium: 'oil',
   surface: 'canvas',
-  # medium: :oil,
-  # surface: :canvas,
+  image_url: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Vincent_van_Gogh_-_The_yellow_house_%28%27The_street%27%29.jpg',
   author_id: User.find_by_username("vincent").id
 )
 
@@ -25,17 +24,15 @@ Photo.create!(
   title: "Self-Portrait",
   medium: 'oil',
   surface: 'canvas',
-  # medium: :oil,
-  # surface: :canvas,
+  image_url: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project.jpg',
   author_id: User.find_by_username("vincent").id
 )
 
 Photo.create!(
-  title: "Still Life: Vase with Twelve Sunflowers",
+  title: "Sunflowers",
   medium: 'oil',
   surface: 'canvas',
-  # medium: :oil,
-  # surface: :canvas,
+  image_url: 'https://upload.wikimedia.org/wikipedia/commons/b/b4/Vincent_Willem_van_Gogh_128.jpg',
   author_id: User.find_by_username("vincent").id
 )
 

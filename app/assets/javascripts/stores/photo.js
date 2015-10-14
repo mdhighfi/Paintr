@@ -9,14 +9,14 @@
   };
 
   var resetPhoto = function (photo) {
-    var switched = false;
+    var changed = false;
     _photos.forEach(function (p) {
       if(p.id === photo.id) {
         _photos[_photos.indexOf(p)] = photo;
-        switched = true;
+        changed = true;
       }
     });
-    if(!switched) { _photos.push(photo); }
+    if(!changed) { _photos.push(photo); }
   };
 
   window.PhotoStore = $.extend({}, EventEmitter.prototype, {

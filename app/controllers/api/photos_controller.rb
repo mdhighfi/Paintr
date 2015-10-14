@@ -1,13 +1,17 @@
 class Api::PhotosController < ApplicationController
-  # def create
-  #   @photo = Photo.new(photo_params)
-  #
-  #   if @photo.save
-  #     render :show
-  #   else
-  #     render json: @photo.errors.full_messages, status: 422
-  #   end
-  # end
+  def create
+    @photo = Photo.new(photo_params)
+    @photo.author_id = current_user.id
+    @photo.image_url = Cloudinary::Uploader.upload(@photo.image_url)["secure_url"]
+
+    if @photo.save
+      render :show
+    else
+      render json: @photo.errors.full_messages, status: 422
+    end
+
+
+  end
 
   # def destroy
   #   @photo = Photo.find(params[:id])
@@ -25,6 +29,6 @@ class Api::PhotosController < ApplicationController
 
   private
   def photo_params
-    params.require(:photo).permit(:title, :description, :medium, :surface)
+    params.require(:photo).permit(:title, :description, :medium, :surface, :image_url)
   end
 end
