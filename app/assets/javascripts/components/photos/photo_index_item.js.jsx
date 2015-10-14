@@ -5,7 +5,6 @@ window.PhotoIndexItem = React.createClass({
    },
 
    render: function () {
-     debugger;
      return(
        <li onClick={this.showDetail} className="photo-index-item">
          <p><img src={this.props.photo.image_url} width="400" /></p>
