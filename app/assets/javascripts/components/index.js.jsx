@@ -1,4 +1,4 @@
-window.Index = React.createClass({
+window.App = React.createClass({
   render: function () {
     return(
       <div>
