@@ -8,7 +8,7 @@ $(function () {
   React.render((
     <Router>
       <Route path="/" component={App}>
-        <Route path="user/:userId" component={UserDetail} />
+        <Route path="photos/" component={IndexRoute}></Route>
         <Route
           path="user/:userId/photos/:photoId"
           components={{photo: PhotoDetail}}/>

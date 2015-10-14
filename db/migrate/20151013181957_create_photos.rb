@@ -5,6 +5,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.string :description
       t.string :medium, null: false
       t.string :surface, null: false
+      t.string :image_url, null: false
       t.integer :author_id, null: false
       t.integer :album_id
 

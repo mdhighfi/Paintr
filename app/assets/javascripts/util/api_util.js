@@ -28,14 +28,13 @@ window.ApiUtil = {
     })
   },
 
-  createPhoto: function (photo, callback) {
+  createPhoto: function (photo) {
     $.ajax({
       url: "api/photo",
       method: "POST",
       data: {photo: photo},
       success: function (photo) {
         ApiActions.receiveSinglePhoto(photo);
-        callback && callback(photo.id);
       }
     })
   }
