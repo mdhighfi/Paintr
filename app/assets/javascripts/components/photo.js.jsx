@@ -11,7 +11,7 @@ var PhotoDetail = React.createClass({
   },
   render: function () {
     return(
-      <div>
+      <div className="photo-detail">
         <p><img src={this.foundPhoto().image_url} width="800" /></p>
         <p>Title: {this.foundPhoto().title}</p>
         <p>Description: {this.foundPhoto().description}</p>
