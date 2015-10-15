@@ -30,11 +30,11 @@ window.PhotoForm = React.createClass({
     return(
       <form className='new-photo' onSubmit={this.createPhoto}>
         <div>
-          <label htmlFor='photo_name'>Name:</label>
+          <label htmlFor='photo_title'>Title:</label>
           <input
             type='text'
-            id='photo_name'
-            valueLink={this.linkState("name")}
+            id='photo_title'
+            valueLink={this.linkState("title")}
           />
         </div>
 
