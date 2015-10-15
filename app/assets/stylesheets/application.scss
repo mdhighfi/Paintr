@@ -2,6 +2,10 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ .jumbotron {
+   text-align: center;
+ }
+
  body::after {
    content: "";
    background: url('starry_night_small.jpg');
