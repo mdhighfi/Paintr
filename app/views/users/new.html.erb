@@ -1,20 +1,21 @@
-<h2>Sign Up</h2>
+<div class="jumbotron col-xs-offset-4 col-xs-4">
 
-<form action="<%= users_url %>" method="post">
+  <h2>Sign Up</h2>
 
-  <%= auth_token %>
+  <form class="form-group" action="<%= users_url %>" method="post">
 
-  <label for="user_username">Username: </label><br/>
-  <input id ="user_username" type="text" name="user[username]" value="<%=@user.username %>">
-<br/>
-<br/>
-  <label for="user_password">Password: </label><br/>
-  <input id="user_password" type="password" name="user[password]">
-<br/>
-<br/>
-  <input type="submit" value="Sign Up">
-</form>
+    <%= auth_token %>
 
-<br/>
+    <input placeholder="username" class="form-control" id ="user_username" type="text" name="user[username]" value="<%=@user.username %>">
+  <br/>
+  <br/>
+    <input placeholder="password" class="form-control" id="user_password" type="password" name="user[password]">
+  <br/>
+  <br/>
+    <input class="form-control" type="submit" value="Sign Up">
+  </form>
 
-<p>Already have an account? <%= link_to "Sign in", new_session_url %>.
+  <br/>
+
+  <p>Already have an account? <%= link_to "Sign in", new_session_url %>.
+</div>
