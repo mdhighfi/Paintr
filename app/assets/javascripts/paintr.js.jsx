@@ -8,7 +8,7 @@ $(function () {
     <Route path="/" component={App}>
       <IndexRoute component={PhotosIndex}>
       </IndexRoute>
-      <Route path="photos/:photoId" component={PhotoDetail} />
+      <Route path="photo/:photoId" component={PhotoDetail} />
     </Route>
   );
 // PhotosIndex
