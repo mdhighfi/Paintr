@@ -1,27 +1,31 @@
-var Navbar = React.createClass({
-  componentDidMount: function() {
-    document.getElementById("upload_widget_opener").addEventListener("click", function() {
+var uploadCallback = function(){
+  cloudinary.openUploadWidget({
+    cloud_name: 'paintr',
+    upload_preset: 'npkae9ay',
+    theme: 'minimal',
+    thumbnail_transformation:[
+      {width: 200, height: 200, crop: 'fill'},
+      {effect: 'sepia'}
+    ]
+  },
+  function(error, result) {
+    console.log(error, result);
+    ApiUtil.createPhoto({
+      image_url: result[0].secure_url,
+      title: 'new_image',
+      description: 'this is a test',
+      medium: 'watercolor',
+      surface: 'paper',
+    });
+  });
+};
 
-      cloudinary.openUploadWidget({
-        cloud_name: 'paintr',
-        upload_preset: 'npkae9ay',
-        theme: 'minimal',
-        thumbnail_transformation:[
-          {width: 200, height: 200, crop: 'fill'},
-          {effect: 'sepia'}
-        ]
-      },
-      function(error, result) {
-        console.log(error, result);
-        ApiUtil.createPhoto({
-          image_url: result[0].secure_url,
-          title: 'new_image',
-          description: 'this is a test',
-          medium: 'watercolor',
-          surface: 'paper',
-        });
-      });
-    }, false);
+var Navbar = React.createClass({
+
+  // <PhotoForm/>
+
+  componentDidMount: function() {
+    document.getElementById("upload_widget_opener").addEventListener("click", uploadCallback, false);
   },
   render: function(){
     return (
