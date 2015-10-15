@@ -26,30 +26,34 @@ window.PhotoForm = React.createClass({
   },
 
   render: function () {
-    debugger;
     return(
-      <form className='new-photo' onSubmit={this.createPhoto}>
-        <div>
-          <label htmlFor='photo_title'>Title:</label>
-          <input
-            type='text'
-            id='photo_title'
-            valueLink={this.linkState("title")}
-          />
-        </div>
+      <div className="photo-modal">
+        <form className='new-photo' onSubmit={this.createPhoto}>
+          <div>
+            <label htmlFor='photo_title'>Title:</label>
+            <input
+              type='text'
+              id='photo_title'
+              valueLink={this.linkState("title")}
+            />
+          </div>
 
-        <div>
-          <label htmlFor='photo_image_url'>Image URL:</label>
-          <input
-            type='text'
-            id='photo_image_url'
-            valueLink={this.linkState("image_url")}
-          />
-        </div>
+          <div>
+            <label htmlFor='photo_image_url'>Image URL:</label>
+            <input
+              type='text'
+              id='photo_image_url'
+              valueLink={this.linkState("image_url")}
+            />
+          </div>
 
-        <button>Create Photo</button>
-        <br />
-      </form>
+          <button>Create Photo</button>
+          <br />
+        </form>
+      </div>
     );
   }
 });
+// window.showPhotoModal = function(){
+//   React.render(<PhotoForm/>, document.getElementById('modal-root'));
+// }

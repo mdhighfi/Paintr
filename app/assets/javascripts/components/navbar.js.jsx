@@ -1,4 +1,14 @@
-var uploadCallback = function(){
+
+var Navbar = React.createClass({
+
+  // <PhotoForm/>
+  mixins: [ReactRouter.History],
+  getInitialState: function() {
+    return { uploading: false };
+  },
+  uploadCallback: function(){
+    debugger
+    // this.props.history.pushState(null, "upload");
   cloudinary.openUploadWidget({
     cloud_name: 'paintr',
     upload_preset: 'npkae9ay',
@@ -10,22 +20,27 @@ var uploadCallback = function(){
   },
   function(error, result) {
     console.log(error, result);
-    ApiUtil.createPhoto({
-      image_url: result[0].secure_url,
-      title: 'new_image',
-      description: 'this is a test',
-      medium: 'watercolor',
-      surface: 'paper',
-    });
-  });
-};
-
-var Navbar = React.createClass({
-
-  // <PhotoForm/>
-
+    this.history.pushState(null, 'upload', {url: result[0].secure_url});
+    // ApiUtil.createPhoto({
+    //   image_url: result[0].secure_url,
+    //   title: 'new_image',
+    //   description: 'this is a test',
+    //   medium: 'watercolor',
+    //   surface: 'paper',
+    // });
+  }.bind(this));
+    console.log('uploading');
+    // this.setState({ uploading: true });
+    // ApiUtil.createPhoto({
+    //   image_url: 'http://vignette1.wikia.nocookie.net/princesstutu/images/3/3e/Troll_Face.png/revision/latest/scale-to-width-down/295?cb=20140111014458',
+    //   title: 'new_image',
+    //   description: 'this is a test',
+    //   medium: 'watercolor',
+    //   surface: 'paper',
+    // });
+  },
   componentDidMount: function() {
-    document.getElementById("upload_widget_opener").addEventListener("click", uploadCallback, false);
+    document.getElementById("upload_widget_opener").addEventListener("click", this.uploadCallback, false);
   },
   render: function(){
     return (
