@@ -1,10 +1,10 @@
 window.PhotosIndex = React.createClass({
   getInitialState: function () {
-    return { photos: PhotoStore.all() };
+    return { photos: PhotoStore.all(), currentUserId: CURRENT_USER_ID };
   },
 
   _onChange: function () {
-    this.setState({ photos: PhotoStore.all() });
+    this.setState({ photos: PhotoStore.all(), currentUserId: CURRENT_USER_ID });
   },
 
   componentDidMount: function () {
