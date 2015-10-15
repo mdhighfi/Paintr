@@ -14,6 +14,7 @@ User.create(username: "rafael", password: "password")
 
 Photo.create!(
   title: "The Yellow House",
+  description: "I love this house. Therefore, I painted it... I mean, not it, but a painting of it.",
   medium: 'oil',
   surface: 'canvas',
   image_url: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Vincent_van_Gogh_-_The_yellow_house_%28%27The_street%27%29.jpg',
