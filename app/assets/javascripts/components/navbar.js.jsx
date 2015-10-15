@@ -5,10 +5,14 @@ var Navbar = React.createClass({
       cloudinary.openUploadWidget({
         cloud_name: 'paintr',
         upload_preset: 'npkae9ay',
-        theme: 'minimal'
+        theme: 'minimal',
+        thumbnail_transformation:[
+          {width: 200, height: 200, crop: 'fill'},
+          {effect: 'sepia'}
+        ]
       },
       function(error, result) {
-        console.log(error, result) });
+        console.log(error, result);
         ApiUtil.createPhoto({
           image_url: result[0].secure_url,
           title: 'new_image',
@@ -16,6 +20,7 @@ var Navbar = React.createClass({
           medium: 'watercolor',
           surface: 'paper',
         });
+      });
     }, false);
   },
   render: function(){

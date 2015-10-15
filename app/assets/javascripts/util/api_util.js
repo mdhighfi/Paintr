@@ -30,7 +30,7 @@ window.ApiUtil = {
 
   createPhoto: function (photo) {
     $.ajax({
-      url: "api/photo",
+      url: "api/photos",
       method: "POST",
       data: {photo: photo},
       success: function (photo) {

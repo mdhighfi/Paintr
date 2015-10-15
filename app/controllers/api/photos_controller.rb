@@ -2,7 +2,7 @@ class Api::PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     @photo.author_id = current_user.id
-    @photo.image_url = Cloudinary::Uploader.upload(@photo.image_url)["secure_url"]
+    # @photo.image_url = Cloudinary::Uploader.upload(@photo.image_url)["secure_url"]
 
     if @photo.save
       render :show
