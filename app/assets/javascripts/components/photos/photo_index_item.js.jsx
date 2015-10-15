@@ -11,4 +11,4 @@ window.PhotoIndexItem = React.createClass({
        </li>
      );
    }
-})
+});
