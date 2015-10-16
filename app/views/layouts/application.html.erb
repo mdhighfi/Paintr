@@ -7,12 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%star = "transparent-div starry_night"%>
-<div class="<%=star%>"></div>
+
+<%paintings=%w(starry_night artist-facing-blank-canvas autumn_landscape
+      boat-sea-landscape Creation_of_Adam Eckenbrecher Freedom_from_want
+      jeff-watts1 jeff-watts2 landscape landscape2 landscape3
+      marshes-painting melting-clocks modern-art Mona_Lisa
+      painting-background painting-background2 paintings_fences
+      picasso school-of-athens Summer-Days water-color) %>
+<% painting = paintings.sample %>
+<div class="transparent-div <%= painting %>"></div>
 
 <% if current_user  %>
 <script>
-  window.CURRENT_USER_ID = <%= current_user.id %>
+  windowCURRENT_USER_ID = <%= current_user.id %>
   window.CURRENT_USERNAME = "<%= current_user.username %>"
 </script>
 <% end %>
