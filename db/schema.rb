@@ -19,9 +19,8 @@ ActiveRecord::Schema.define(version: 20151013181957) do
   create_table "photos", force: :cascade do |t|
     t.string   "title",       null: false
     t.string   "description"
-    t.string   "medium",      null: false
-    t.string   "surface",     null: false
-    t.string   "image_url",   null: false
+    t.integer  "url_id",      null: false
+    t.integer  "media_id",    null: false
     t.integer  "author_id",   null: false
     t.integer  "album_id"
     t.datetime "created_at",  null: false
@@ -30,8 +29,8 @@ ActiveRecord::Schema.define(version: 20151013181957) do
 
   add_index "photos", ["album_id"], name: "index_photos_on_album_id", using: :btree
   add_index "photos", ["author_id"], name: "index_photos_on_author_id", using: :btree
-  add_index "photos", ["medium"], name: "index_photos_on_medium", using: :btree
-  add_index "photos", ["surface"], name: "index_photos_on_surface", using: :btree
+  add_index "photos", ["media_id"], name: "index_photos_on_media_id", using: :btree
+  add_index "photos", ["url_id"], name: "index_photos_on_url_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
