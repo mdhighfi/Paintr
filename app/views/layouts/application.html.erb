@@ -19,7 +19,7 @@
 
 <% if current_user  %>
 <script>
-  windowCURRENT_USER_ID = <%= current_user.id %>
+  window.CURRENT_USER_ID = <%= current_user.id %>
   window.CURRENT_USERNAME = "<%= current_user.username %>"
 </script>
 <% end %>

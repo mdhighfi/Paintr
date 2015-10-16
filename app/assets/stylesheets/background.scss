@@ -1,19 +1,36 @@
-$images: ('https://s3-us-west-2.amazonaws.com/s.cdpn.io/55764/wdw201412872214626_6973885966_18.jpeg', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/55764/notebook.JPG',  'https://s3-us-west-2.amazonaws.com/s.cdpn.io/55764/me-sketch-no-fill.png');
-
-$img: nth($images, random(length($images)));
-
-.rando-calrissian{
-  background: url($img) top center no-repeat;
-  height: 1000px;
-  width: 1000px;
-  padding: 1em;
-  margin: 0 auto;
-  border: 3px solid #999999;
-
-  & h2{
-   background: #FF0000;
-   color: #FFFFFF;
-   text-align: center;
-   margin: 0;
-  }
+div.transparent-div {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.4;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: -1;
 }
+
+.starry_night { background: url('starry_night_small.jpg'); }
+.artist-facing-blank-canvas { background: url('artist-facing-blank-canvas.jpg'); }
+.autumn_landscape { background: url('autumn_landscape.jpg'); }
+.boat-sea-landscape { background: url('boat-sea-landscape.jpg'); }
+.Creation_of_Adam { background: url('Creation_of_Adam.jpg'); }
+.Eckenbrecher { background: url('Eckenbrecher.jpg'); }
+.Freedom_from_want { background: url('Freedom_from_want.jpg'); }
+.jeff-watts1 { background: url('jeff-watts1.jpg'); }
+.jeff-watts2 { background: url('jeff-watts2.jpg'); }
+.landscape { background: url('landscape.jpg'); }
+.landscape2 { background: url('landscape2.jpg'); }
+.landscape3 { background: url('landscape3.jpg'); }
+.marshes-painting { background: url('marshes-painting.jpg'); }
+.melting-clocks { background: url('melting-clocks.jpg'); }
+.modern-art { background: url('modern-art.jpg'); }
+.Mona_Lisa { background: url('Mona_Lisa.jpg'); }
+.painting-background { background: url('painting-background.jpg'); }
+.painting-background2 { background: url('painting-background2.jpg'); }
+.paintings_fences { background: url('paintings_fences.jpg'); }
+.picasso { background: url('picasso.jpg'); }
+.school-of-athens { background: url('school-of-athens.jpg'); }
+.Summer-Days { background: url('Summer-Days.jpg'); }
+.water-color { background: url('water-color.jpg'); }
