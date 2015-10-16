@@ -1,0 +1,19 @@
+$images: ('https://s3-us-west-2.amazonaws.com/s.cdpn.io/55764/wdw201412872214626_6973885966_18.jpeg', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/55764/notebook.JPG',  'https://s3-us-west-2.amazonaws.com/s.cdpn.io/55764/me-sketch-no-fill.png');
+
+$img: nth($images, random(length($images)));
+
+.rando-calrissian{
+  background: url($img) top center no-repeat;
+  height: 1000px;
+  width: 1000px;
+  padding: 1em;
+  margin: 0 auto;
+  border: 3px solid #999999;
+
+  & h2{
+   background: #FF0000;
+   color: #FFFFFF;
+   text-align: center;
+   margin: 0;
+  }
+}

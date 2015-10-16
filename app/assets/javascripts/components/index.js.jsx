@@ -3,7 +3,9 @@ window.App = React.createClass({
     return(
       <div>
         <div className="extra-margin-bottom">
+          <BackgroundStyle/>
           <Navbar/>
+          <ModalTest/>
         </div>
         {this.props.children}
       </div>
