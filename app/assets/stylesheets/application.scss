@@ -1,6 +1,7 @@
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "modal";
 
  .jumbotron {
    text-align: center;
@@ -26,7 +27,6 @@
  }
 
  .transparent-div {
-   background: url('starry_night_small.jpg');
    background-attachment: fixed;
    background-position: center;
    background-repeat: no-repeat;
@@ -38,6 +38,30 @@
    position: fixed;
    z-index: -1;
  }
+
+ .starry_night { background: url('starry_night_small.jpg'); }
+ .artist-facing-blank-canvas { background: url('artist-facing-blank-canvas.jpg'); }
+ .autumn_landscape { background: url('autumn_landscape.jpg'); }
+ .boat-sea-landscape { background: url('boat-sea-landscape.jpg'); }
+ .Creation_of_Adam { background: url('Creation_of_Adam.jpg'); }
+ .Eckenbrecher { background: url('Eckenbrecher.jpg'); }
+ .Freedom_from_want { background: url('Freedom_from_want.jpg'); }
+ .jeff-watts1 { background: url('jeff-watts1.jpg'); }
+ .jeff-watts2 { background: url('jeff-watts2.jpg'); }
+ .landscape { background: url('landscape.jpg'); }
+ .landscape2 { background: url('landscape2.jpg'); }
+ .landscape3 { background: url('landscape3.jpg'); }
+ .marshes-painting { background: url('marshes-painting.jpg'); }
+ .melting-clocks { background: url('melting-clocks.jpg'); }
+ .modern-art { background: url('modern-art.jpg'); }
+ .Mona_Lisa { background: url('Mona_Lisa.jpg'); }
+ .painting-background { background: url('painting-background.jpg'); }
+ .painting-background2 { background: url('painting-background2.jpg'); }
+ .paintings_fences { background: url('paintings_fences.jpg'); }
+ .picasso { background: url('picasso.jpg'); }
+ .school-of-athens { background: url('school-of-athens.jpg'); }
+ .Summer-Days { background: url('Summer-Days.jpg'); }
+ .water-color { background: url('water-color.jpg'); }
 
  .extra-margin-bottom {
    margin-bottom: 90px;
