@@ -3,8 +3,7 @@ class CreatePhotos < ActiveRecord::Migration
     create_table :photos do |t|
       t.string :title, null: false
       t.string :description
-      t.integer :url_id, null: false, index: true
-      t.integer :media_id, null: false, index: true
+      t.string :image_url, null: false
       t.integer :author_id, null: false, index: true
       t.integer :album_id, index: true
 
