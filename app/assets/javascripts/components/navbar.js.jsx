@@ -7,7 +7,6 @@ var Navbar = React.createClass({
     return { uploading: false };
   },
   uploadCallback: function(){
-    debugger
     // this.props.history.pushState(null, "upload");
   cloudinary.openUploadWidget({
     cloud_name: 'paintr',

@@ -3,7 +3,7 @@ class Api::PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
     @photo.author_id = current_user.id
     # @photo.image_url = Cloudinary::Uploader.upload(@photo.image_url)["secure_url"]
-    
+
     if @photo.save
       render :show
     else
@@ -20,7 +20,9 @@ class Api::PhotosController < ApplicationController
   # end
 
   def index
-    @photos = Photo.all
+    @photos = Photo.where(
+      author_id: current_user.id
+    )
   end
 
   def show
@@ -29,6 +31,7 @@ class Api::PhotosController < ApplicationController
 
   private
   def photo_params
-    params.require(:photo).permit(:title, :description, :medium, :surface, :image_url)
+    params.require(:photo).permit(
+      :title, :description, :image_url, :author_id, :album_id)
   end
 end
