@@ -5,10 +5,10 @@ window.PhotoIndexItem = React.createClass({
    },
 
    render: function () {
-     var indexPhoto = $.cloudinary.url("sample.jpg", { width: 100, height: 150, crop: 'fill' });
+    //  var indexPhoto = $.cloudinary.url("sample.jpg", { width: 100, height: 150, crop: 'fill' });
      return(
        <li onClick={this.showDetail} className="photo-index-item">
-         <p><img src={this.props.photo.image_url} width="400" /></p>
+         <img src={this.props.photo.image_url} width="400" />
        </li>
      );
    }
