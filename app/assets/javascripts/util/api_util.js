@@ -29,6 +29,7 @@ window.ApiUtil = {
   },
 
   createPhoto: function (photo) {
+    debugger
     $.ajax({
       url: "api/photos",
       method: "POST",
