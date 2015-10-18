@@ -26,7 +26,7 @@ UserImage.create!(
 Photo.create!(
   title: "The Yellow House",
   description: "I love this house. Therefore, I painted it... I mean, not it, but a painting of it.",
-  image_url: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Vincent_van_Gogh_-_The_yellow_house_%28%27The_street%27%29.jpg',
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445139731/yellow_house_tajaew.jpg',
   author_id: User.find_by_username("vincent").id,
   medium: "oil",
   surface: "canvas"
@@ -34,7 +34,7 @@ Photo.create!(
 
 Photo.create!(
   title: "Self-Portrait",
-  image_url: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project.jpg',
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445139726/Self-Portrait_ubif9k.jpg',
   author_id: User.find_by_username("vincent").id,
   medium: "watercolor",
   surface: "paper"
@@ -42,7 +42,7 @@ Photo.create!(
 
 Photo.create!(
   title: "Sunflowers",
-  image_url: 'https://upload.wikimedia.org/wikipedia/commons/b/b4/Vincent_Willem_van_Gogh_128.jpg',
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445139710/sunflowers_yz9tj7.jpg',
   author_id: User.find_by_username("vincent").id,
   medium: "acrylic",
   surface: "wood"

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.cloudinary.js
 //= require flux
 //= require eventemitter
 //= require react
