@@ -3,37 +3,12 @@
  @import "bootstrap";
  @import "background";
  @import "index";
+ @import "photos";
 
  .jumbotron {
    text-align: center;
  }
 
- .photo-index-item {
-   float: left;
-   list-style-type: none;
- }
-
- .photo-detail li {
-   float: none;
-   list-style-type: none;
- }
-
- .photo-detail img {
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-   height: 81vh;
- }
-
  .extra-margin-bottom {
    margin-bottom: 90px;
- }
-
- .photo-detail {
-   width: 100%;
-   max-width: 800px;
-   margin: 0 auto;
-   text-align: center;
  }
