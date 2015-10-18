@@ -6,20 +6,38 @@ var Navbar = React.createClass({
   getInitialState: function() {
     return { uploading: false };
   },
+
+  _getPhotoFileName: function(url) {
+    var regexp = /[^\/]*$/; // everything after the last slash
+    return url.match(regexp)[0];
+  },
+
+  _manipulateImage: function(photoFileName) {
+    debugger;
+    return $.cloudinary.url(photoFileName, {
+      width: 100,
+      height: 150,
+      crop: 'fill'
+    });
+  },
+
   uploadCallback: function(){
     // this.props.history.pushState(null, "upload");
   cloudinary.openUploadWidget({
     cloud_name: 'paintr',
     upload_preset: 'npkae9ay',
     theme: 'minimal',
-    thumbnail_transformation:[
-      {width: 200, height: 200, crop: 'fill'},
-      {effect: 'sepia'}
-    ]
+    // thumbnail_transformation:[
+    //   {width: 200, height: 200, crop: 'fill'},
+    //   {effect: 'sepia'}
+    // ]
   },
   function(error, result) {
     console.log(error, result);
-    this.history.pushState(null, 'upload', {url: result[0].secure_url});
+    debugger;
+    var photoFileName = this._getPhotoFileName(result[0].url);
+    var indexItemImageUrl = this._manipulateImage(photoFileName);
+    this.history.pushState(null, 'upload', {url: indexItemImageUrl});
     // ApiUtil.createPhoto({
     //   image_url: result[0].secure_url,
     //   title: 'new_image',
@@ -38,9 +56,11 @@ var Navbar = React.createClass({
     //   surface: 'paper',
     // });
   },
+
   componentDidMount: function() {
     document.getElementById("upload_widget_opener").addEventListener("click", this.uploadCallback, false);
   },
+
   render: function(){
     return (
       <nav className="navbar navbar-default navbar-fixed-top">
@@ -70,7 +90,7 @@ var Navbar = React.createClass({
                   <button type="submit" className="btn btn-default">Search</button>
                 </form>
               </li>
-              <li><a href="#" id="upload_widget_opener">Upload</a></li>
+              <li><a href="#" id="upload_widget_opener"><span className="glyphicon glyphicon-upload" aria-hidden="true"></span></a></li>
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{window.CURRENT_USERNAME}<span className="caret"></span></a>
                 <ul className="dropdown-menu">

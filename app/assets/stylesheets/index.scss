@@ -1,0 +1,21 @@
+.index-item {
+  margin: 5px;
+  width: 250px;
+  height: 250px;
+  opacity: .9;
+  box-shadow: 3px 2px 2px black;
+}
+
+.index-item:hover {
+  opacity: 1;
+  border: 1px solid #246
+}
+
+.index-list {
+  clear: both;
+  content: "";
+  display: block;
+  height: 80vh;
+  overflow: auto;
+  padding: 5px;
+}
