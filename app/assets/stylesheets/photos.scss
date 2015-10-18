@@ -1,0 +1,32 @@
+.photo-index-item {
+  list-style-type: none;
+  margin: 5px;
+  box-shadow: 3px 2px 2px black;
+}
+
+.photo-detail li {
+  float: none;
+  list-style-type: none;
+}
+
+.photo-detail {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.photo-detail img {
+   margin: 0 auto;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+  height: 81vh;
+  box-shadow: 2px 1px 1px black;
+}
+
+.photo-index-item:hover {
+  opacity: 1;
+  border: 1px solid #246
+}
