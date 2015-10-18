@@ -17,6 +17,12 @@ var PhotoDetail = React.createClass({
     this.setState({ photo: this.foundPhoto() })
   },
 
+  _manipulateImage: function(url) {
+    var regexp = /\/upload\//; // everything after the last slash
+    var manipulation = "h_1000\/";
+    return url.replace(regexp, "$&" + manipulation);
+  },
+
   componentDidMount: function () {
     PhotoStore.addPhotosIndexChangeListener(this._onChange);
     PhotoStore.addPhotoDetailChangeListener(this._onChange);
@@ -30,17 +36,21 @@ var PhotoDetail = React.createClass({
 
   render: function () {
     var currentPhoto = this.state.photo;
+    var detailUrl = '';
+    if (typeof currentPhoto.image_url !== 'undefined') {
+      detailUrl = this._manipulateImage(currentPhoto.image_url);
+    }
     var desc = '';
     if (typeof currentPhoto.description === 'string') {
       desc = <li>Description: {currentPhoto.description}</li>;
     }
     return(
       <div className="photo-detail">
-        <p><img src={this.foundPhoto().image_url} /></p>
+        <p><img src={detailUrl} /></p>
           <ul>
-            <li>Title: {this.state.photo.title}</li>
+            <li>Title: {currentPhoto.title}</li>
             {desc}
-            <li><em>{this.state.photo.medium} on {this.state.photo.surface}</em></li>
+            <li><em>{currentPhoto.medium} on {currentPhoto.surface}</em></li>
           </ul>
       </div>
     );

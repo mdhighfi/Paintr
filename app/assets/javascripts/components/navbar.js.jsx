@@ -7,20 +7,6 @@ var Navbar = React.createClass({
     return { uploading: false };
   },
 
-  _getPhotoFileName: function(url) {
-    var regexp = /[^\/]*$/; // everything after the last slash
-    return url.match(regexp)[0];
-  },
-
-  _manipulateImage: function(photoFileName) {
-    debugger;
-    return $.cloudinary.url(photoFileName, {
-      width: 100,
-      height: 150,
-      crop: 'fill'
-    });
-  },
-
   uploadCallback: function(){
     // this.props.history.pushState(null, "upload");
   cloudinary.openUploadWidget({
@@ -34,17 +20,14 @@ var Navbar = React.createClass({
   },
   function(error, result) {
     console.log(error, result);
-    debugger;
-    var photoFileName = this._getPhotoFileName(result[0].url);
-    var indexItemImageUrl = this._manipulateImage(photoFileName);
-    this.history.pushState(null, 'upload', {url: indexItemImageUrl});
-    // ApiUtil.createPhoto({
-    //   image_url: result[0].secure_url,
-    //   title: 'new_image',
-    //   description: 'this is a test',
-    //   medium: 'watercolor',
-    //   surface: 'paper',
-    // });
+    this.history.pushState(null, 'upload', {url: result[0].url});
+    ApiUtil.createPhoto({
+      image_url: result[0].url,
+      title: 'new_image',
+      description: 'this is a test',
+      medium: 'watercolor',
+      surface: 'paper',
+    });
   }.bind(this));
     console.log('uploading');
     // this.setState({ uploading: true });
