@@ -1,10 +1,10 @@
-window.PhotoForm = React.createClass({
+var PhotoForm = React.createClass({
   mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
   blankAttrs: {
     title: '',
-    image_url: '',
     description: '',
+    image_url: '',
     medium: '',
     surface: '',
   },
@@ -16,7 +16,7 @@ window.PhotoForm = React.createClass({
   createPhoto: function (event) {
     event.preventDefault();
     ApiUtil.createPhoto({
-      image_url: result[0].secure_url,
+      image_url: result[0].secure_url, // this gets photo info from cloudinary
       title: 'new_image',
       description: 'this is a test',
       medium: 'watercolor',
