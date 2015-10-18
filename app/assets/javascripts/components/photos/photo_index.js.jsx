@@ -20,7 +20,7 @@ window.PhotosIndex = React.createClass({
 
   render: function () {
     return(
-      <ul>
+      <ul className="index-list">
         {this.state.photos.map(function (photo) {
           return <PhotoIndexItem key={photo.id} photo={photo} />;
         })}
