@@ -21,4 +21,5 @@
 //= require cloudinary
 //= require cloudinary_uploader.js
 //= require bootstrap-sprockets
+//= require bootstrap-dialog.min.js
 //= require_tree .
