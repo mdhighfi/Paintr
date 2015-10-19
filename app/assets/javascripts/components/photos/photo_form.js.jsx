@@ -52,73 +52,58 @@ var PhotoForm = React.createClass({
   render: function () {
     return(
       // <ModalTest/>
-      <div id="uploadModal" classNameName="modal is-active">
-        <div className='modal-content'>
-        <span className="modal-close js-hide-modal">&times;</span>
-          <h2>Describe This Piece</h2>
-          <img className="photo-index-item" src='http://res.cloudinary.com/paintr/image/upload/h_100/v1445212900/Red_vineyards_nkyswd.jpg'/>
-          <form onSubmit={this.createPhoto}>
-            <div>
-              <input
-                className="form-control"
-                type='text'
-                id='photo_title'
-                placeholder='title'
-                valueLink={this.linkState("title")}
-              />
-            </div>
+      <div className="container ">
+        <div id="uploadModal" className="modal is-active">
+          <div className='modal-content'>
+          <span className="modal-close js-hide-modal">&times;</span>
+            <h2>Describe This Piece</h2>
+            <img className="photo-upload-item" src='http://res.cloudinary.com/paintr/image/upload/h_100/v1445212900/Red_vineyards_nkyswd.jpg'/>
+            <form onSubmit={this.createPhoto}>
+              <div>
+                <input
+                  className="form-control"
+                  type='text'
+                  id='photo_title'
+                  placeholder='title'
+                  valueLink={this.linkState("title")}
+                />
+              </div>
 
-            <div>
-              <input
-                className="form-control"
-                type='text'
-                id='photo_description'
-                placeholder='description'
-                valueLink={this.linkState("description")}
-              />
-            </div>
+              <div>
+                <input
+                  className="form-control"
+                  type='text'
+                  id='photo_description'
+                  placeholder='description'
+                  valueLink={this.linkState("description")}
+                />
+              </div>
 
-            <div>
-              <button
-                type="button"
-                id='photo_medium'
-                className="btn btn-default dropdown-toggle"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                valueLink={this.linkState("medium")}
-              >
-              <span className="caret"></span>
-              </button>
-                <ul className="dropdown-menu">
-                  <li><a href="#">Oil</a></li>
-                  <li><a href="#">Acrylic</a></li>
-                  <li><a href="#">Watercolor</a></li>
-                  <li><a href="#">Gouache</a></li>
-                </ul>
-              <button
-                type="button"
-                className="btn btn-default dropdown-toggle"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                valueLink={this.linkState("surface")}
-              >
-                <span className="caret"></span>
-                </button>
-                <ul className="dropdown-menu">
-                  <li><a href="#">Canvas</a></li>
-                  <li><a href="#">Paper</a></li>
-                  <li><a href="#">Wood</a></li>
-                  <li><a href="#">Metal</a></li>
-                  <li><a href="#">Marble</a></li>
-                </ul>
-            </div>
+              <div className="selectors">
+                <select className="form-control" defaultValue=''>
+                  <option value="" disabled>medium</option>
+                  <option value="oil">Oil</option>
+                  <option value="acrylic">Acrylic</option>
+                  <option value="watercolor">Watercolor</option>
+                  <option value="gouache">Gouache</option>
+                </select>
 
-            <button>Create Photo</button>
-            <br />
-          </form>
-      </div>
+                <select className="form-control" defaultValue=''>
+                  <option value="" disabled>surface</option>
+                  <option value="canvas">Canvas</option>
+                  <option value="paper">Paper</option>
+                  <option value="wood">Wood</option>
+                  <option value="metal">Metal</option>
+                  <option value="marble">Marble</option>
+                </select>
+              </div>
+
+              <button className="btn btn-primary">Create Photo</button>
+
+              <br />
+            </form>
+          </div>
+        </div>
       </div>
     );
   }
@@ -127,3 +112,44 @@ var PhotoForm = React.createClass({
 window.showPhotoModal = function(){
   React.render(<PhotoForm/>, document.getElementById('modal-root'));
 }
+
+//
+// <div className="inputGroup">
+//   <button
+//     type="button"
+//     id='photo_medium'
+//     className="btn btn-default dropdown-toggle"
+//     data-toggle="dropdown"
+//     aria-haspopup="true"
+//     aria-expanded="false"
+//     valueLink={this.linkState("medium")}
+//   >
+//   <span className="caret"></span>
+//   </button>
+//   <ul className="dropdown-menu">
+//     <li><a href="#">Oil</a></li>
+//     <li><a href="#">Acrylic</a></li>
+//     <li><a href="#">Watercolor</a></li>
+//     <li><a href="#">Gouache</a></li>
+//   </ul>
+// </div>
+
+// <div className="inputGroup">
+//   <button
+//     type="button"
+//     className="btn btn-default dropdown-toggle"
+//     data-toggle="dropdown"
+//     aria-haspopup="true"
+//     aria-expanded="false"
+//     valueLink={this.linkState("surface")}
+//   >
+//   <span className="caret"></span>
+//   </button>
+//   <ul className="dropdown-menu">
+//     <li><a href="#">Canvas</a></li>
+//     <li><a href="#">Paper</a></li>
+//     <li><a href="#">Wood</a></li>
+//     <li><a href="#">Metal</a></li>
+//     <li><a href="#">Marble</a></li>
+//   </ul>
+// </div>
