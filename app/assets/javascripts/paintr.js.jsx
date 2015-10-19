@@ -6,10 +6,9 @@ $(function () {
   var rootEl = document.getElementById('content');
   var routes = (
     <Route path="/" component={App}>
-      // <IndexRoute component={PhotosIndex}/>
-      <IndexRoute component={PhotoForm}/>
-      // <Route path="upload" component={{index: PhotosIndex, form: PhotoForm}} />
-      // <Route path="photo/:photoId" component={PhotoDetail} />
+      <IndexRoute component={PhotosIndex}/>
+      <Route path="upload" component={PhotosIndex} />
+      <Route path="photo/:photoId" component={PhotoDetail} />
     </Route>
   );
 // PhotosIndex
@@ -26,3 +25,6 @@ $(function () {
   // $("body").on("click", ".js-show-modal", window.showModal);
   // $("body").on("click", ".js-hide-modal", window.hideModal);
 });
+
+// <IndexRoute component={PhotoForm}/>
+// <Route component={PhotosIndex}/>
