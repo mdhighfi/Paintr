@@ -42,13 +42,13 @@ var PhotoDetail = React.createClass({
     }
     var desc = '';
     if (typeof currentPhoto.description === 'string') {
-      desc = <li>Description: {currentPhoto.description}</li>;
+      desc = <li><h4>Description: {currentPhoto.description}</h4></li>;
     }
     return(
       <div className="photo-detail">
         <p><img src={detailUrl} /></p>
           <ul>
-            <li>Title: {currentPhoto.title}</li>
+            <li><h4>Title: {currentPhoto.title}</h4></li>
             {desc}
             <li><em>{currentPhoto.medium} on {currentPhoto.surface}</em></li>
           </ul>
