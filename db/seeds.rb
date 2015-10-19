@@ -47,3 +47,123 @@ Photo.create!(
   medium: "acrylic",
   surface: "wood"
 )
+
+Photo.create!(
+  title: "Cool Painting",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445211196/vangogh-42_dutubv.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
+
+Photo.create!(
+  title: "Pickin\' Apples",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445211196/vangogh-39_ssjjl2.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
+
+Photo.create!(
+  title: "Field with Poppies",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445212255/field-with-poppies_sw3gzj.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
+
+Photo.create!(
+  title: "Good Times",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445211196/van-gogh-13336296-1036-840_ubktnn.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
+
+Photo.create!(
+  title: "Good Times",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445211198/Van_Gogh_0013_wjqsq4.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
+
+Photo.create!(
+  title: "Bad Times",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445211200/Irises_go89vv.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
+
+Photo.create!(
+  title: "Eatin' Pancakes",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445211199/Green_Field_ltkrll.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
+
+Photo.create!(
+  title: "Rest",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445212252/rest_g6oce3.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
+
+Photo.create!(
+  title: "Eugene Boch",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445212612/Eugene_Boch_cuyxrs.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
+
+Photo.create!(
+  title: "The Potato Eaters",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445212612/potoato-eaters_nrkwcj.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
+
+Photo.create!(
+  title: "Cafe Terrace at Night",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445212705/Cafe-Terrace-at-night_my2jvn.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
+
+Photo.create!(
+  title: "Red Vineyards",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445212900/Red_vineyards_nkyswd.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
+
+Photo.create!(
+  title: "Self Portrait (1989)",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445212899/Self-Portrait__1889_phjqhg.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
+
+Photo.create!(
+  title: "The Night Cafe",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445212893/the-night-cafe_tvmvgm.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
+
+Photo.create!(
+  title: "Wheat With Crows",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445213051/wheat-with-crows_z2bxmi.jpg',
+  author_id: User.find_by_username("vincent").id,
+  medium: "oil",
+  surface: "canvas"
+)
