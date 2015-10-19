@@ -56,10 +56,10 @@ a:hover {
   z-index: 1000;
   text-align: center;
 
-  top: 8vw;
+  top: 8vh;
   left: 50%;
 
-  width: 40vw;
+  width: 400px;
   padding: 20px;
 
   transform: translateY(-50%);
@@ -86,4 +86,10 @@ a:hover {
 
 .modal-close:hover {
   color: black;
+}
+
+.form-footer {
+  text-align:right;
+  margin-bottom: -30px;
+  padding-bottom: -30px;
 }

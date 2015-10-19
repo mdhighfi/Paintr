@@ -1,9 +1,7 @@
 var Navbar = React.createClass({
-
-  // <PhotoForm/>
   mixins: [ReactRouter.History],
   getInitialState: function() {
-    return { uploading: false };
+    return { uploading: '' };
   },
 
   uploadCallback: function(){
@@ -15,8 +13,8 @@ var Navbar = React.createClass({
   },
   function(error, result) {
     console.log(error, result);
-    this.history.pushState(null, 'upload', {url: result[0].url});
-    this.setState({ uploading: true });
+    this.history.pushState(null, 'upload');
+    this.setState({ uploading: result[0].url });
   }.bind(this));
     console.log('uploading');
   },
@@ -25,9 +23,17 @@ var Navbar = React.createClass({
     document.getElementById("upload_widget_opener").addEventListener("click", this.uploadCallback, false);
   },
 
+  removeModal: function () {
+    this.setState({ uploading: ''});
+  },
+
   render: function(){
     var form;
-    (this.state.uploading ? form = <PhotoForm/> : form = '');
+    if (this.state.uploading !== '') {
+      form = <PhotoForm imageUrl={this.state.uploading} removeModal={this.removeModal}/>;
+    } else {
+      form = '';
+    }
     return (
       <div>
         <nav className="navbar navbar-default navbar-fixed-top">
@@ -76,18 +82,3 @@ var Navbar = React.createClass({
     );
   }
 });
-    // ApiUtil.createPhoto({
-    //   image_url: result[0].url,
-    //   title: 'new_image',
-    //   description: 'this is a test',
-    //   medium: 'watercolor',
-    //   surface: 'paper',
-    // });
-
-    // ApiUtil.createPhoto({
-    //   image_url: 'http://vignette1.wikia.nocookie.net/princesstutu/images/3/3e/Troll_Face.png/revision/latest/scale-to-width-down/295?cb=20140111014458',
-    //   title: 'new_image',
-    //   description: 'this is a test',
-    //   medium: 'watercolor',
-    //   surface: 'paper',
-    // });
