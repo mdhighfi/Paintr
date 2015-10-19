@@ -1,4 +1,3 @@
-
 var Navbar = React.createClass({
 
   // <PhotoForm/>
@@ -73,7 +72,7 @@ var Navbar = React.createClass({
                   <button type="submit" className="btn btn-default">Search</button>
                 </form>
               </li>
-              <li><a href="#" id="upload_widget_opener"><span className="glyphicon glyphicon-upload" aria-hidden="true"></span></a></li>
+              <li><h4><a href="#" id="upload_widget_opener"><span className="glyphicon glyphicon-upload" aria-hidden="true">Upload</span></a></h4></li>
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{window.CURRENT_USERNAME}<span className="caret"></span></a>
                 <ul className="dropdown-menu">
