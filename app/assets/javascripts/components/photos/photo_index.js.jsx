@@ -20,11 +20,16 @@ window.PhotosIndex = React.createClass({
 
   render: function () {
     return(
-      <ul className="index-list">
-        {this.state.photos.map(function (photo) {
-          return <PhotoIndexItem key={photo.id} photo={photo} />;
-        })}
-      </ul>
+      <div>
+        <button type="button" className="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          Launch demo modal
+        </button>
+        <ul className="index-list">
+          {this.state.photos.map(function (photo) {
+            return <PhotoIndexItem key={photo.id} photo={photo} />;
+          })}
+        </ul>
+      </div>
     );
   }
 })
