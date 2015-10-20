@@ -4,7 +4,6 @@ window.ApiUtil = {
       url: "session",
       method: "DELETE",
       success: function() {
-        console.log("signed out");
         window.location = "/";
       }
     });
@@ -32,6 +31,17 @@ window.ApiUtil = {
     $.ajax({
       url: "api/photos",
       method: "POST",
+      data: {photo: photo},
+      success: function (photo) {
+        ApiActions.receiveSinglePhoto(photo);
+      }
+    })
+  },
+
+  deletePhoto: function (photo) {
+    $.ajax({
+      url: "api/photo",
+      method: "DELETE",
       data: {photo: photo},
       success: function (photo) {
         ApiActions.receiveSinglePhoto(photo);
