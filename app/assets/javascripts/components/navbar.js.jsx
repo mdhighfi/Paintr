@@ -5,18 +5,16 @@ var Navbar = React.createClass({
   },
 
   uploadCallback: function(){
-    // this.props.history.pushState(null, "upload");
-  cloudinary.openUploadWidget({
-    cloud_name: 'paintr',
-    upload_preset: 'npkae9ay',
-    theme: 'minimal',
-  },
-  function(error, result) {
-    console.log(error, result);
-    this.history.pushState(null, 'upload');
-    this.setState({ uploading: result[0].url });
-  }.bind(this));
-    console.log('uploading');
+    cloudinary.openUploadWidget({
+      cloud_name: 'paintr',
+      upload_preset: 'npkae9ay',
+      theme: 'minimal',
+    },
+    function(error, result) {
+      console.log(error, result);
+      this.history.pushState(null, 'upload');
+      this.setState({ uploading: result[0].url });
+    }.bind(this));
   },
 
   componentDidMount: function() {
