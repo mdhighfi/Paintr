@@ -9,7 +9,6 @@ html, body, section, article, h1, p, div, a {
 
 body {
   font-family: sans-serif;
-  padding: 100px;
 }
 
 h1 {
@@ -48,7 +47,6 @@ a:hover {
   height: 100%;
   z-index: 999;
   background: rgba(0, 0, 0, 0.7);
-  // background-color: black;
 }
 
 .modal-content {

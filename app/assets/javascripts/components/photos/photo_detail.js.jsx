@@ -18,7 +18,7 @@ var PhotoDetail = React.createClass({
   },
 
   _manipulateImage: function(url) {
-    var regexp = /\/upload\//; // everything after the last slash
+    var regexp = /\/upload\//;
     var manipulation = "h_1000\/";
     return url.replace(regexp, "$&" + manipulation);
   },

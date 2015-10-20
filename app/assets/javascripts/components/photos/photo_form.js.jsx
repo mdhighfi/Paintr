@@ -22,12 +22,13 @@ var PhotoForm = React.createClass({
     event.preventDefault();
     ApiUtil.createPhoto({
       image_url: this.props.imageUrl,
-      title: 'new_image',
-      description: 'this is a test',
-      medium: 'watercolor',
-      surface: 'paper',
+      title: this.state.title,
+      description: this.state.description,
+      medium: this.state.medium,
+      surface: this.state.surface,
     });
     this.setState(this.blankAttrs);
+    this.props.removeModal();
   },
 
   render: function () {
@@ -61,7 +62,11 @@ var PhotoForm = React.createClass({
             </div>
 
             <div className="selectors">
-              <select className="form-control" defaultValue=''>
+              <select
+                className="form-control"
+                defaultValue=''
+                valueLink={this.linkState("medium")}
+              >
                 <option value="" disabled>*medium</option>
                 <option value="oil">Oil</option>
                 <option value="acrylic">Acrylic</option>
@@ -69,7 +74,11 @@ var PhotoForm = React.createClass({
                 <option value="gouache">Gouache</option>
               </select>
 
-              <select className="form-control" defaultValue=''>
+              <select
+                className="form-control"
+                defaultValue=''
+                valueLink={this.linkState("surface")}
+              >
                 <option value="" disabled>*surface</option>
                 <option value="canvas">Canvas</option>
                 <option value="paper">Paper</option>
