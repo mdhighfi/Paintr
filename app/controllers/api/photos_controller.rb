@@ -13,11 +13,11 @@ class Api::PhotosController < ApplicationController
 
   end
 
-  # def destroy
-  #   @photo = Photo.find(params[:id])
-  #   @photo.destroy
-  #   render :show
-  # end
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+    render :index
+  end
 
   def index
     @photos = Photo.where(
