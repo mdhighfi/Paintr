@@ -35,7 +35,7 @@ var PhotoForm = React.createClass({
     var imageUrl = this._manipulateImage(this.props.imageUrl);
     return(
       <div id="uploadModal" className="modal is-active">
-      <div className="modal-screen js-hide-modal"></div>
+      <div className="modal-screen js-hide-modal" onClick={this.props.removeModal}></div>
         <div className='modal-content'>
           <span className="modal-close js-hide-modal" onClick={this.props.removeModal}>&times;</span>
           <h2>Describe This Piece</h2>
