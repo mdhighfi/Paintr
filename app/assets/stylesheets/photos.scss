@@ -57,9 +57,10 @@ div.photo-detail-background {
 .photo-detail-footer {
   position: fixed;
   bottom:5px;
-  right:15px;
+  right:5px;
   a {
     color: cornflowerblue;
+    padding: 10px;
   }
   a:hover {
     color: forestgreen;

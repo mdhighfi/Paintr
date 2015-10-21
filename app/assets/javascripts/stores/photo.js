@@ -1,7 +1,7 @@
 (function () {
   var PHOTOS_INDEX_CHANGE_EVENT = "photosIndexChange";
   var PHOTO_DETAIL_CHANGE_EVENT = "photoDetailChange";
-  var PHOTO_DELETE_CHANGE_EVENT = "photoDetailChange";
+  var PHOTO_DELETE_CHANGE_EVENT = "photoDeleteChange";
 
   var _photos = [];
 

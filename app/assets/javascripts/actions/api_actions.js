@@ -14,6 +14,7 @@ window.ApiActions = {
   },
 
   deleteSinglePhoto: function (photo) {
+    debugger;
     AppDispatcher.dispatch({
       actionType: PhotoConstants.PHOTO_DELETED,
       photo: photo

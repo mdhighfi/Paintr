@@ -19,8 +19,7 @@ class User < ActiveRecord::Base
   has_many :photos,
     class_name: "Photo",
     foreign_key: :author_id,
-    primary_key: :id,
-    dependent: :destroy
+    primary_key: :id
 
   attr_reader :password
 

@@ -17,6 +17,10 @@ var PhotoDetail = React.createClass({
     this.setState({ photo: this.foundPhoto() })
   },
 
+  _onDelete: function() {
+    this.setState({ photo: {} })
+  },
+
   _manipulateImage: function(url) {
     var regexp = /\/upload\//;
     var manipulation = "h_1000\/";
@@ -25,22 +29,24 @@ var PhotoDetail = React.createClass({
 
   _deleteCallback: function() {
     console.log('delete clicked');
-    ApiUtil.deletePhoto();
+    ApiUtil.deletePhoto(this.state.photo);
   },
 
   componentDidMount: function () {
     window.scroll(0,0);
     PhotoStore.addPhotosIndexChangeListener(this._onChange);
     PhotoStore.addPhotoDetailChangeListener(this._onChange);
-    // PhotoStore.addPhotoDeleteChangeListener();
-    document.getElementById("photo-deleter").addEventListener("click", this._deleteCallback, false);
+    PhotoStore.addPhotoDeleteChangeListener(this._onDelete);
+    document.getElementById("photo-edit").addEventListener("click", this._editCallback, false);
+    document.getElementById("photo-download").addEventListener("click", this._downloadCallback, false);
+    document.getElementById("photo-delete").addEventListener("click", this._deleteCallback, false);
     ApiUtil.fetchAllPhotos();
   },
 
   compomentWillUnmount: function () {
     PhotoStore.removePhotosIndexChangeListener(this._onChange);
     PhotoStore.removePhotoDetailChangeListener(this._onChange);
-    // PhotoStore.removePhotoDeleteChangeListener();
+    PhotoStore.removePhotoDeleteChangeListener(this._onDelete);
   },
 
   render: function () {
@@ -65,9 +71,17 @@ var PhotoDetail = React.createClass({
             </div>
         </div>
         <div className="photo-detail-footer">
-          <h4><a href="#" id="photo-deleter">
-            <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
-          </a></h4>
+          <h4>
+            <a href="#" id="photo-edit">
+              <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+            </a>
+            <a href={currentPhoto.image_url} download={currentPhoto.title} id="photo-download">
+              <span className="glyphicon glyphicon-download" aria-hidden="true"></span>
+            </a>
+            <a href="#" id="photo-delete">
+              <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            </a>
+          </h4>
         </div>
       </div>
     );
