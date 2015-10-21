@@ -39,7 +39,6 @@ var PhotoDetail = React.createClass({
     PhotoStore.addPhotoDeleteChangeListener(this._onDelete);
     document.getElementById("photo-edit").addEventListener("click", this._editCallback, false);
     document.getElementById("photo-download").addEventListener("click", this._downloadCallback, false);
-    document.getElementById("photo-delete").addEventListener("click", this._deleteCallback, false);
     ApiUtil.fetchAllPhotos();
   },
 
@@ -71,17 +70,17 @@ var PhotoDetail = React.createClass({
             </div>
         </div>
         <div className="photo-detail-footer">
-          <h4>
+          <h3>
             <a href="#" id="photo-edit">
               <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
             </a>
             <a href={currentPhoto.image_url} download={currentPhoto.title} id="photo-download">
               <span className="glyphicon glyphicon-download" aria-hidden="true"></span>
             </a>
-            <a href="#" id="photo-delete">
+            <a href="#" id="photo-delete" onClick={this._deleteCallback}>
               <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
             </a>
-          </h4>
+          </h3>
         </div>
       </div>
     );
