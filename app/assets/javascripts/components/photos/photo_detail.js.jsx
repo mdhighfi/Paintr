@@ -29,6 +29,7 @@ var PhotoDetail = React.createClass({
   },
 
   componentDidMount: function () {
+    window.scroll(0,0);
     PhotoStore.addPhotosIndexChangeListener(this._onChange);
     PhotoStore.addPhotoDetailChangeListener(this._onChange);
     PhotoStore.addPhotoDeleteChangeListener();
