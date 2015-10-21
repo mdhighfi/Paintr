@@ -12,16 +12,21 @@
   border: 1px solid #111;
 }
 
+.photo-detail {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.photo-centered {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .photo-detail li {
   float: none;
   list-style-type: none;
-}
-
-.photo-detail {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
 }
 
 .photo-detail img {
@@ -30,7 +35,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 75vh;
+  height: 65vh;
   box-shadow: 2px 1px 1px black;
 }
 
