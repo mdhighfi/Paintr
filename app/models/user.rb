@@ -15,11 +15,14 @@ class User < ActiveRecord::Base
     presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true}
 
-  has_many :user_images, dependent: :destroy
+  has_many :user_images,
+    dependent: :destroy
+
   has_many :photos,
     class_name: "Photo",
     foreign_key: :author_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 
   attr_reader :password
 
