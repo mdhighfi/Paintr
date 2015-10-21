@@ -39,6 +39,12 @@
   box-shadow: 2px 1px 1px black;
 }
 
+.photo-detail-footer {
+  position: fixed;
+  bottom:5px;
+  right:15px;
+}
+
 .photo-index-item:hover {
   opacity: 1;
   border: 1px solid #246
