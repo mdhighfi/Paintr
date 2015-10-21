@@ -1,6 +1,7 @@
 (function () {
   var PHOTOS_INDEX_CHANGE_EVENT = "photosIndexChange";
   var PHOTO_DETAIL_CHANGE_EVENT = "photoDetailChange";
+  var PHOTO_DELETE_CHANGE_EVENT = "photoDetailChange";
 
   var _photos = [];
 
@@ -9,6 +10,17 @@
   };
 
   var resetPhoto = function (photo) {
+    var changed = false;
+    _photos.forEach(function (p) {
+      if(p.id === photo.id) {
+        _photos[_photos.indexOf(p)] = photo;
+        changed = true;
+      }
+    });
+    if(!changed) { _photos.push(photo); }
+  };
+
+  var deletePhoto = function (photo) {
     var changed = false;
     _photos.forEach(function (p) {
       if(p.id === photo.id) {
@@ -41,6 +53,14 @@
       this.removeListener(PHOTO_DETAIL_CHANGE_EVENT, callback);
     },
 
+    addPhotoDeleteChangeListener: function (callback) {
+      this.on(PHOTO_DELETE_CHANGE_EVENT, callback);
+    },
+
+    removePhotoDeleteChangeListener: function (callback) {
+      this.removeListener(PHOTO_DELETE_CHANGE_EVENT, callback);
+    },
+
     addPhotosIndexChangeListener: function (callback) {
       this.on(PHOTOS_INDEX_CHANGE_EVENT, callback);
     },
@@ -58,6 +78,10 @@
         case PhotoConstants.PHOTO_RECEIVED:
           resetPhoto(payload.photo);
           PhotoStore.emit(PHOTO_DETAIL_CHANGE_EVENT);
+          break;
+        case PhotoConstants.PHOTO_DELETED:
+          deletePhoto(payload.photo);
+          PhotoStore.emit(PHOTO_DELETE_CHANGE_EVENT);
           break;
       }
     })
