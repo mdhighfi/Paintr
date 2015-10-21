@@ -24,15 +24,15 @@ var PhotoDetail = React.createClass({
   },
 
   _deleteCallback: function() {
-    console.log('delete clicked')
-    ApiUtil.delete-photo
+    console.log('delete clicked');
+    ApiUtil.deletePhoto();
   },
 
   componentDidMount: function () {
     window.scroll(0,0);
     PhotoStore.addPhotosIndexChangeListener(this._onChange);
     PhotoStore.addPhotoDetailChangeListener(this._onChange);
-    PhotoStore.addPhotoDeleteChangeListener();
+    // PhotoStore.addPhotoDeleteChangeListener();
     document.getElementById("photo-deleter").addEventListener("click", this._deleteCallback, false);
     ApiUtil.fetchAllPhotos();
   },
@@ -40,7 +40,7 @@ var PhotoDetail = React.createClass({
   compomentWillUnmount: function () {
     PhotoStore.removePhotosIndexChangeListener(this._onChange);
     PhotoStore.removePhotoDetailChangeListener(this._onChange);
-    PhotoStore.removePhotoDeleteChangeListener();
+    // PhotoStore.removePhotoDeleteChangeListener();
   },
 
   render: function () {
@@ -55,17 +55,19 @@ var PhotoDetail = React.createClass({
     }
     return(
       <div className="photo-detail">
-        <p><img src={detailUrl} /></p>
-        <div className="delete-photo">
+        <div className="photo-centered">
+            <img src={detailUrl} />
+            <div>
+              <li><h4>Title: {currentPhoto.title}</h4></li>
+              {desc}
+              <li><em>{currentPhoto.medium} on {currentPhoto.surface}</em></li>
+            </div>
+        </div>
+        <div className="photo-detail-footer">
           <h4><a href="#" id="photo-deleter">
             <span className="glyphicon glyphicon-trash" aria-hidden="true">Delete</span>
           </a></h4>
         </div>
-          <ul>
-            <li><h4>Title: {currentPhoto.title}</h4></li>
-            {desc}
-            <li><em>{currentPhoto.medium} on {currentPhoto.surface}</em></li>
-          </ul>
       </div>
     );
   }
