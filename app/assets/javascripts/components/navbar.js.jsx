@@ -4,7 +4,7 @@ var Navbar = React.createClass({
     return { uploading: '' };
   },
 
-  uploadCallback: function(){
+  _uploadCallback: function(){
     cloudinary.openUploadWidget({
       cloud_name: 'paintr',
       upload_preset: 'npkae9ay',
@@ -18,7 +18,7 @@ var Navbar = React.createClass({
   },
 
   componentDidMount: function() {
-    document.getElementById("upload_widget_opener").addEventListener("click", this.uploadCallback, false);
+    document.getElementById("upload_widget_opener").addEventListener("click", this._uploadCallback, false);
   },
 
   removeModal: function () {
