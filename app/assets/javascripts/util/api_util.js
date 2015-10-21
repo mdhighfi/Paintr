@@ -40,9 +40,10 @@ window.ApiUtil = {
 
   deletePhoto: function (photo) {
     $.ajax({
-      url: "api/photo/" + photo.id,
+      url: "api/photos/" + photo.id,
       method: "DELETE",
       success: function (response) {
+        debugger
         ApiActions.deleteSinglePhoto(response);
       }
     })
