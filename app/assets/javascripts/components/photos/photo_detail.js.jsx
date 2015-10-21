@@ -65,7 +65,7 @@ var PhotoDetail = React.createClass({
         </div>
         <div className="photo-detail-footer">
           <h4><a href="#" id="photo-deleter">
-            <span className="glyphicon glyphicon-trash" aria-hidden="true">Delete</span>
+            <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
           </a></h4>
         </div>
       </div>
