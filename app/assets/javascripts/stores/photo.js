@@ -21,14 +21,11 @@
   };
 
   var deletePhoto = function (photo) {
-    var changed = false;
     _photos.forEach(function (p) {
       if(p.id === photo.id) {
-        _photos[_photos.indexOf(p)] = photo;
-        changed = true;
+        _photos.splice(_photos.indexOf(p), 1);
       }
     });
-    if(!changed) { _photos.push(photo); }
   };
 
   window.PhotoStore = $.extend({}, EventEmitter.prototype, {

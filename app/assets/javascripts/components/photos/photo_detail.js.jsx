@@ -23,15 +23,23 @@ var PhotoDetail = React.createClass({
     return url.replace(regexp, "$&" + manipulation);
   },
 
+  _deleteCallback: function() {
+    console.log('delete clicked')
+    ApiUtil.delete-photo
+  },
+
   componentDidMount: function () {
     PhotoStore.addPhotosIndexChangeListener(this._onChange);
     PhotoStore.addPhotoDetailChangeListener(this._onChange);
+    PhotoStore.addPhotoDeleteChangeListener();
+    document.getElementById("photo-deleter").addEventListener("click", this._deleteCallback, false);
     ApiUtil.fetchAllPhotos();
   },
 
   compomentWillUnmount: function () {
     PhotoStore.removePhotosIndexChangeListener(this._onChange);
     PhotoStore.removePhotoDetailChangeListener(this._onChange);
+    PhotoStore.removePhotoDeleteChangeListener();
   },
 
   render: function () {
@@ -47,6 +55,11 @@ var PhotoDetail = React.createClass({
     return(
       <div className="photo-detail">
         <p><img src={detailUrl} /></p>
+        <div className="delete-photo">
+          <h4><a href="#" id="photo-deleter">
+            <span className="glyphicon glyphicon-trash" aria-hidden="true">Delete</span>
+          </a></h4>
+        </div>
           <ul>
             <li><h4>Title: {currentPhoto.title}</h4></li>
             {desc}
