@@ -11,5 +11,12 @@ window.ApiActions = {
       actionType: PhotoConstants.PHOTO_RECEIVED,
       photo: photo
     });
+  },
+
+  deleteSinglePhoto: function (photo) {
+    AppDispatcher.dispatch({
+      actionType: PhotoConstants.PHOTO_DELETED,
+      photo: photo
+    });
   }
 }
