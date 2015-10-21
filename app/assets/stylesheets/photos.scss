@@ -1,3 +1,17 @@
+div.photo-detail-background {
+  background: black;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: -1;
+}
+
 .photo-index-item {
   list-style-type: none;
   margin: 5px;
@@ -25,6 +39,7 @@
 }
 
 .photo-detail li {
+  color: lightgrey;
   float: none;
   list-style-type: none;
 }
@@ -43,6 +58,12 @@
   position: fixed;
   bottom:5px;
   right:15px;
+  a {
+    color: cornflowerblue;
+  }
+  a:hover {
+    color: forestgreen;
+  }
 }
 
 .photo-index-item:hover {

@@ -55,6 +55,7 @@ var PhotoDetail = React.createClass({
     }
     return(
       <div className="photo-detail">
+        <div className="photo-detail-background"></div>
         <div className="photo-centered">
             <img src={detailUrl} />
             <div>
