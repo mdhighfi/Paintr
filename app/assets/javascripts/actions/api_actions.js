@@ -20,4 +20,24 @@ window.ApiActions = {
     });
   },
 
+  receiveAllAlbums: function (albums) {
+    AppDispatcher.dispatch({
+      actionType: AlbumConstants.ALBUMS_RECEIVED,
+      albums: albums
+    });
+  },
+
+  receiveSingleAlbum: function (album) {
+    AppDispatcher.dispatch({
+      actionType: AlbumConstants.ALBUM_RECEIVED,
+      album: album
+    });
+  },
+
+  deleteSingleAlbum: function (album) {
+    AppDispatcher.dispatch({
+      actionType: AlbumConstants.ALBUM_DELETED,
+      album: album
+    });
+  }
 }
