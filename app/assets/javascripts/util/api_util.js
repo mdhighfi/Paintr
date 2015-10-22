@@ -57,5 +57,55 @@ window.ApiUtil = {
         ApiActions.receiveSinglePhoto(response);
       }
     })
+  },
+
+  fetchAllAlbums: function() {
+    $.ajax({
+      url: "api/albums",
+      success: function (albums) {
+        ApiActions.receiveAllAlbums(albums);
+      }
+    })
+  },
+
+  fetchSingleAlbum: function(id) {
+    $.ajax({
+      url: "api/albums/" + id,
+      success: function (album) {
+        ApiActions.receiveSingleAlbum(album);
+      }
+    })
+  },
+
+  createAlbum: function(album) {
+    $.ajax({
+      url: "api/albums",
+      method: "POST",
+      data: {album: album},
+      success: function (response) {
+        ApiActions.receiveSingleAlbum(response);
+      }
+    })
+  },
+
+  editAlbum: function(album) {
+    $.ajax({
+      url: "api/album/" + album.id,
+      method: "PATCH",
+      data: {album: album},
+      success: function (response) {
+        ApiActions.receiveSingleAlbum(response);
+      }
+    })
+  },
+
+  deleteAlbum: function(album) {
+    $.ajax({
+      url: "api/albums/" + album.id,
+      method: "DELETE",
+      success: function (response) {
+        ApiActions.deleteSingleAlbum(response);
+      }
+    })
   }
 }
