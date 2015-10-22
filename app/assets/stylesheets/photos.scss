@@ -60,10 +60,14 @@ div.photo-detail-background {
   right:5px;
   a {
     color: cornflowerblue;
-    padding: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    transition: 0.2s;
   }
   a:hover {
     color: forestgreen;
+    position: relative;
+    bottom: 2px;
   }
 }
 

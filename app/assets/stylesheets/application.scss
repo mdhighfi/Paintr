@@ -16,10 +16,17 @@
  }
 
 .navbar {
-  a {
-   color: cornflowerblue;
+  max-height: 50px;
+  h3 a {
+    color: cornflowerblue;
+    position: relative;
+    top: -8px;
+    transition: 0.2s;
+    padding: 0px;
+    margin: 0px;
   }
-  a:hover {
+  h3 a:hover {
    color: forestgreen;
+   top: -10px;
   }
 }
