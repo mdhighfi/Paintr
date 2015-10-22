@@ -1,7 +1,7 @@
 var Navbar = React.createClass({
   mixins: [ReactRouter.History],
   getInitialState: function() {
-    return { uploading: '' };
+    return { uploading: '', creatingAlbum: false };
   },
 
   _uploadCallback: function(){
@@ -17,12 +17,18 @@ var Navbar = React.createClass({
     }.bind(this));
   },
 
+  _createAlbumCallback: function(){
+    this.setState({ creatingAlbum: true });
+  },
+
   componentDidMount: function() {
     document.getElementById("upload_widget_opener").addEventListener("click", this._uploadCallback, false);
+    document.getElementById("album-form-opener").addEventListener("click", this._createAlbumCallback, false);
   },
 
   componentWillUnmount: function() {
     document.getElementById("upload_widget_opener").removeEventListener("click", this._uploadCallback, false);
+    document.getElementById("album-form-opener").removeEventListener("click", this._createAlbumCallback, false);
   },
 
   removeModal: function () {
@@ -30,11 +36,12 @@ var Navbar = React.createClass({
   },
 
   render: function(){
-    var form;
+    var form = '';
     if (this.state.uploading !== '') {
       form = <PhotoForm imageUrl={this.state.uploading} removeModal={this.removeModal} editing={false}/>;
-    } else {
-      form = '';
+    }
+    if (this.state.creatingAlbum) {
+      form = <AlbumForm removeModal={this.removeModal} />;
     }
     return (
       <div>
@@ -52,7 +59,7 @@ var Navbar = React.createClass({
 
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li className="active"><a href="#">You <span className="sr-only">(current)</span></a></li>
+                <li><a href="#">You <span className="sr-only">(current)</span></a></li>
                 <li><a href="#">Explore</a></li>
 
               </ul>
@@ -71,6 +78,8 @@ var Navbar = React.createClass({
                   <ul className="dropdown-menu">
                     <li><a href="#">My Photos</a></li>
                     <li><a href="#">My Albums</a></li>
+                    <li role="separator" className="divider"></li>
+                    <li><a href="#" id="album-form-opener">Create Album</a></li>
                     <li role="separator" className="divider"></li>
                     <li><a href="#" onClick={window.ApiUtil.signOut}>Sign Out</a></li>
                   </ul>
