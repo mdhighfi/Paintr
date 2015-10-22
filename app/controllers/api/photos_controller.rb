@@ -9,8 +9,6 @@ class Api::PhotosController < ApplicationController
     else
       render json: @photo.errors.full_messages, status: 422
     end
-
-
   end
 
   def destroy
@@ -28,6 +26,19 @@ class Api::PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
+  end
+
+  def update
+    @photo = Photo.find(params[:id])
+    @photo.update(
+      title: params[:title],
+      description: params[:description],
+      medium: params[:medium],
+      surface: params[:surface],
+    )
+    debugger;
+
+    render json: @photo
   end
 
   private

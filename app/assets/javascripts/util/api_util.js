@@ -43,8 +43,19 @@ window.ApiUtil = {
       url: "api/photos/" + photo.id,
       method: "DELETE",
       success: function (response) {
-        debugger
         ApiActions.deleteSinglePhoto(response);
+      }
+    })
+  },
+
+  editPhoto: function (photo) {
+    $.ajax({
+      url: "api/photos/" + photo.id,
+      method: "PATCH",
+      data: {photo: photo},
+      dataType: 'json',
+      success: function (response) {
+        ApiActions.editSinglePhoto(response);
       }
     })
   }

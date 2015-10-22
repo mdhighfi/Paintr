@@ -21,6 +21,10 @@ var Navbar = React.createClass({
     document.getElementById("upload_widget_opener").addEventListener("click", this._uploadCallback, false);
   },
 
+  componentWillUnmount: function() {
+    document.getElementById("upload_widget_opener").removeEventListener("click", this._uploadCallback, false);
+  },
+
   removeModal: function () {
     this.setState({ uploading: ''});
   },
@@ -28,7 +32,7 @@ var Navbar = React.createClass({
   render: function(){
     var form;
     if (this.state.uploading !== '') {
-      form = <PhotoForm imageUrl={this.state.uploading} removeModal={this.removeModal}/>;
+      form = <PhotoForm imageUrl={this.state.uploading} removeModal={this.removeModal} editing={false}/>;
     } else {
       form = '';
     }
