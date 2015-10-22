@@ -11,5 +11,4 @@ $(function () {
     </Route>
   );
   React.render(<Router>{routes}</Router>, rootEl);
-
 });
