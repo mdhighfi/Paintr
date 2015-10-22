@@ -2,7 +2,6 @@
   var PHOTOS_INDEX_CHANGE_EVENT = "photosIndexChange";
   var PHOTO_DETAIL_CHANGE_EVENT = "photoDetailChange";
   var PHOTO_DELETE_CHANGE_EVENT = "photoDeleteChange";
-  var PHOTO_EDIT_CHANGE_EVENT = "photoEditChange";
 
   var _photos = [];
 
@@ -88,10 +87,6 @@
         case PhotoConstants.PHOTO_DELETED:
           deletePhoto(payload.photo);
           PhotoStore.emit(PHOTO_DELETE_CHANGE_EVENT);
-          break;
-        case PhotoConstants.PHOTO_EDITED:
-          editPhoto(payload.photo);
-          PhotoStore.emit(PHOTO_EDIT_CHANGE_EVENT);
           break;
       }
     })

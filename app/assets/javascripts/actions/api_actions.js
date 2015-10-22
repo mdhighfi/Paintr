@@ -20,11 +20,4 @@ window.ApiActions = {
     });
   },
 
-  editSinglePhoto: function (photo) {
-    AppDispatcher.dispatch({
-      actionType: PhotoConstants.PHOTO_EDITED,
-      photo: photo
-    });
-  },
-
 }

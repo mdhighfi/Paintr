@@ -55,7 +55,6 @@ var PhotoForm = React.createClass({
       createOrEdit = this.createPhoto.bind(this);
       buttonText = "Create Photo"
     }
-    // debugger
     return(
       <div id="uploadModal" className="modal is-active">
       <div className="modal-screen js-hide-modal" onClick={this.props.removeModal}></div>
