@@ -1,3 +1,9 @@
+<div class="paintr-title">
+  <h1>Welcome to Paintr!</h1>
+  <h3>It's where to share your paintings.</h3>
+</div>
+
+
 <div class="jumbotron col-xs-offset-4 col-xs-4">
   <h2>Sign In</h2>
 
@@ -14,5 +20,23 @@
 
   <br/>
 
-  <p>New user? <%= link_to "Sign up", new_user_url %> or try a <%= link_to "demo account", new_user_url%>.</p>
+  <p>New user? <%= link_to "Sign up!", new_user_url %></p>
+  <p>Or try a <a id="demo-link">demo account</a>.</p>
 </div>
+
+<script type=text/javascript>
+  $(function(){
+    $('#demo-link').on('click', function() {
+      $('input:text').val('vincent');
+      $('input:password').val('password');
+      $.ajax({
+        url: '/session',
+        type: "POST",
+        data: { user: {username: 'vincent', password: 'password'}  },
+        success: function() {
+          window.location.href = "/";
+        }
+      })
+    });
+  })
+</script>

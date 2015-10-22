@@ -6,6 +6,7 @@
  @import "photos";
  @import "bootstrap-dialog.min";
  @import "modal";
+ @import url(https://fonts.googleapis.com/css?family=Galindo);
 
  .jumbotron {
    text-align: center;
@@ -22,11 +23,19 @@
     position: relative;
     top: -8px;
     transition: 0.2s;
-    padding: 0px;
     margin: 0px;
   }
   h3 a:hover {
    color: forestgreen;
    top: -10px;
   }
+}
+
+.paintr-title {
+  text-align: center;
+  font-family: 'Galindo', cursive;
+}
+
+#demo-link {
+  cursor: pointer;
 }

@@ -10,5 +10,7 @@ $(function () {
       <Route path="photo/:photoId" component={PhotoDetail} />
     </Route>
   );
-  React.render(<Router>{routes}</Router>, rootEl);
+  if (rootEl) {
+    React.render(<Router>{routes}</Router>, rootEl);
+  }
 });
