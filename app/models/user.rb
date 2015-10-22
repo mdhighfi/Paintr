@@ -24,6 +24,12 @@ class User < ActiveRecord::Base
     primary_key: :id,
     dependent: :destroy
 
+  has_many :albums,
+    class_name: "Album",
+    foreign_key: :author_id,
+    primary_key: :id,
+    dependent: :destroy
+
   attr_reader :password
 
   after_initialize :ensure_session_token
