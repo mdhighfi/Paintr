@@ -56,7 +56,7 @@ var Navbar = React.createClass({
                 <li><a href="#">Explore</a></li>
 
               </ul>
-              <ul className="nav navbar-nav navbar-right">
+              <div className="nav navbar-nav navbar-right">
                 <li>
                   <form className="navbar-form" role="search">
                     <div className="form-group">
@@ -65,7 +65,7 @@ var Navbar = React.createClass({
                     <button type="submit" className="btn btn-default">Search</button>
                   </form>
                 </li>
-                <li><h4><a href="#" id="upload_widget_opener"><span className="glyphicon glyphicon-upload" aria-hidden="true"></span></a></h4></li>
+                <li><h3><a href="#" id="upload_widget_opener"><span className="glyphicon glyphicon-upload" aria-hidden="true"></span></a></h3></li>
                 <li className="dropdown">
                   <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{window.CURRENT_USERNAME}<span className="caret"></span></a>
                   <ul className="dropdown-menu">
@@ -75,7 +75,7 @@ var Navbar = React.createClass({
                     <li><a href="#" onClick={window.ApiUtil.signOut}>Sign Out</a></li>
                   </ul>
                 </li>
-              </ul>
+              </div>
             </div>
           </div>
         </nav>
