@@ -32,13 +32,6 @@ Photo.create!(
   surface: "canvas"
 )
 
-Photo.create!(
-  title: "Self-Portrait",
-  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445139726/Self-Portrait_ubif9k.jpg',
-  author_id: User.find_by_username("vincent").id,
-  medium: "watercolor",
-  surface: "paper"
-)
 
 Photo.create!(
   title: "Sunflowers",
@@ -105,24 +98,8 @@ Photo.create!(
 )
 
 Photo.create!(
-  title: "Rest",
-  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445212252/rest_g6oce3.jpg',
-  author_id: User.find_by_username("vincent").id,
-  medium: "oil",
-  surface: "canvas"
-)
-
-Photo.create!(
   title: "Eugene Boch",
   image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445212612/Eugene_Boch_cuyxrs.jpg',
-  author_id: User.find_by_username("vincent").id,
-  medium: "oil",
-  surface: "canvas"
-)
-
-Photo.create!(
-  title: "The Potato Eaters",
-  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445212612/potoato-eaters_nrkwcj.jpg',
   author_id: User.find_by_username("vincent").id,
   medium: "oil",
   surface: "canvas"
@@ -152,18 +129,53 @@ Photo.create!(
   surface: "canvas"
 )
 
-Photo.create!(
+cafe = Photo.create!(
   title: "The Night Cafe",
   image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445212893/the-night-cafe_tvmvgm.jpg',
   author_id: User.find_by_username("vincent").id,
+  album_id: 1,
   medium: "oil",
   surface: "canvas"
 )
 
-Photo.create!(
+crows = Photo.create!(
   title: "Wheat With Crows",
   image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445213051/wheat-with-crows_z2bxmi.jpg',
   author_id: User.find_by_username("vincent").id,
+  album_id: 1,
   medium: "oil",
   surface: "canvas"
+)
+
+sun = Photo.create!(
+  title: "Self-Portrait",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445139726/Self-Portrait_ubif9k.jpg',
+  author_id: User.find_by_username("vincent").id,
+  album_id: 1,
+  medium: "watercolor",
+  surface: "paper"
+)
+
+potato = Photo.create!(
+  title: "The Potato Eaters",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445212612/potoato-eaters_nrkwcj.jpg',
+  author_id: User.find_by_username("vincent").id,
+  album_id: 1,
+  medium: "oil",
+  surface: "canvas"
+)
+
+rest = Photo.create!(
+  title: "Rest",
+  image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445212252/rest_g6oce3.jpg',
+  author_id: User.find_by_username("vincent").id,
+  album_id: 1,
+  medium: "oil",
+  surface: "canvas"
+)
+
+album = Album.create!(
+  title: "My Favorites",
+  description: "These are my favorites. I hope you like them.",
+  author_id: User.find_by_username("vincent").id,
 )
