@@ -71,7 +71,8 @@ var PhotoDetail = React.createClass({
     }
     var form;
     if (this.state.editing !== '') {
-      form = <PhotoForm imageUrl={this.state.editing} removeModal={this.removeModal} editing={true} />;
+      // form = <PhotoForm imageUrl={this.state.editing} removeModal={this.removeModal} editing={true} />;
+      form = <PhotoForm photo={this.state.photo} imageUrl={this.state.editing} removeModal={this.removeModal} editing={true}/>
     } else {
       form = '';
     }

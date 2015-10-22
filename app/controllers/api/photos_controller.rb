@@ -15,7 +15,7 @@ class Api::PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo.destroy
 
-    render json: @photo
+    render :show
   end
 
   def index
@@ -36,9 +36,8 @@ class Api::PhotosController < ApplicationController
       medium: params[:medium],
       surface: params[:surface],
     )
-    debugger;
 
-    render json: @photo
+    render :show
   end
 
   private
