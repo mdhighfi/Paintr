@@ -8,9 +8,9 @@
 
 Paintr is a web application inspired by Flickr built using Ruby on Rails and React.js. Paintr allows users to:
 
-- [ ] Create an account
-- [ ] Log in / Log out
-- [ ] Upload, view, delete photos, and edit info for photos
+- [X] Create an account
+- [X] Log in / Log out
+- [X] Upload, view, delete photos, and edit info for photos
 - [ ] Create, view, edit, and delete albums
 - [ ] Tag photos with multiple tags
 - [ ] Search your own photos by tag, or medium
