@@ -17,4 +17,9 @@ class Album < ActiveRecord::Base
     class_name: "User",
     foreign_key: :author_id,
     primary_key: :id
+
+  has_many :photos,
+    class_name: "Photo",
+    foreign_key: :album_id,
+    primary_key: :id
 end
