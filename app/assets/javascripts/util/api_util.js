@@ -53,7 +53,6 @@ window.ApiUtil = {
       url: "api/photos/" + photo.id,
       method: "PATCH",
       data: {photo: photo},
-      dataType: 'json',
       success: function (response) {
         ApiActions.editSinglePhoto(response);
       }
