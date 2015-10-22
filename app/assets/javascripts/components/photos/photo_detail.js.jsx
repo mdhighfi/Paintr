@@ -20,7 +20,7 @@ var PhotoDetail = React.createClass({
   },
 
   _onDelete: function() {
-    this.setState({ photo: {} })
+    this.setState({ photo: {}, editing: '', deleting: '' })
   },
 
   _manipulateImage: function(url) {
@@ -30,11 +30,11 @@ var PhotoDetail = React.createClass({
   },
 
   _editCallback: function(photo){
-    this.setState({ editing: photo.image_url });
+    this.setState({ editing: photo.image_url, deleting: '' });
   },
 
   _deleteCallback: function(photo) {
-    this.setState({ deleting: photo.image_url });
+    this.setState({ deleting: photo.image_url, editing: '' });
   },
 
   componentDidMount: function () {
@@ -52,8 +52,7 @@ var PhotoDetail = React.createClass({
   },
 
   removeModal: function () {
-    this.setState({ editing: ''});
-    this.setState({ deleting: ''});
+    this.setState({ editing: '', deleting: ''});
   },
 
   render: function () {
@@ -82,7 +81,6 @@ var PhotoDetail = React.createClass({
         removeModal={this.removeModal}
       />;
     }
-    // debugger
     return(
       <div>
         <div className="photo-detail">

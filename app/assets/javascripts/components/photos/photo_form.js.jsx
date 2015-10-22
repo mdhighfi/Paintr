@@ -56,7 +56,7 @@ var PhotoForm = React.createClass({
       buttonText = "Create Photo"
     }
     return(
-      <div id="uploadModal" className="modal is-active fade">
+      <div id="uploadModal" className="modal is-active">
       <div className="modal-screen js-hide-modal" onClick={this.props.removeModal}></div>
         <div className='modal-content'>
           <span className="modal-close js-hide-modal" onClick={this.props.removeModal}>&times;</span>

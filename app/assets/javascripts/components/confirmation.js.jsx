@@ -5,6 +5,7 @@ var Confirmation = React.createClass({
     e.preventDefault();
     ApiUtil.deletePhoto(this.props.photo);
     this.props.removeModal();
+    this.history.pushState(null, '/');
   },
 
   render: function() {
@@ -13,11 +14,13 @@ var Confirmation = React.createClass({
         <div className="modal-screen js-hide-modal" onClick={this.props.removeModal}></div>
         <div className='modal-content'>
           <span className="modal-close js-hide-modal" onClick={this.props.removeModal}>&times;</span>
-          Are you sure you want to permanently delete this photo?
-        </div>
-        <div className="modal-footer">
-          <button type="button" data-dismiss="modal" className="btn btn-primary" id="delete">Delete</button>
-          <button type="button" data-dismiss="modal" className="btn">Cancel</button>
+          <h3>Are you sure you want to permanently delete this photo?</h3>
+          <form>
+            <div className="form-buttons">
+              <button className="btn btn-primary" onClick={this.deletePhoto}>Delete</button>
+              <button className="btn" onClick={this.props.removeModal}>Cancel</button>
+            </div>
+          </form>
         </div>
       </div>
     );
