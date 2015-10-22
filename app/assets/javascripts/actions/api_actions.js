@@ -14,10 +14,17 @@ window.ApiActions = {
   },
 
   deleteSinglePhoto: function (photo) {
-    debugger;
     AppDispatcher.dispatch({
       actionType: PhotoConstants.PHOTO_DELETED,
       photo: photo
     });
-  }
+  },
+
+  editSinglePhoto: function (photo) {
+    AppDispatcher.dispatch({
+      actionType: PhotoConstants.PHOTO_EDITED,
+      photo: photo
+    });
+  },
+
 }

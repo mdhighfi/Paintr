@@ -31,8 +31,29 @@ var PhotoForm = React.createClass({
     this.props.removeModal();
   },
 
+  editPhoto: function (event) {
+    event.preventDefault();
+    ApiUtil.editPhoto({
+      image_url: this.props.imageUrl,
+      title: this.state.title,
+      description: this.state.description,
+      medium: this.state.medium,
+      surface: this.state.surface,
+    });
+    this.setState(this.blankAttrs);
+    this.props.removeModal();
+  },
+
   render: function () {
     var imageUrl = this._manipulateImage(this.props.imageUrl);
+    var createOrEdit;
+    if (this.props.editing) {
+      createOrEdit = this.editPhoto;
+      buttonText = "Save Changes"
+    } else {
+      createOrEdit = this.createPhoto;
+      buttonText = "Create Photo"
+    }
     return(
       <div id="uploadModal" className="modal is-active">
       <div className="modal-screen js-hide-modal" onClick={this.props.removeModal}></div>
@@ -40,7 +61,7 @@ var PhotoForm = React.createClass({
           <span className="modal-close js-hide-modal" onClick={this.props.removeModal}>&times;</span>
           <h2>Describe This Piece</h2>
           <img className="photo-upload-item" src={imageUrl}/>
-          <form onSubmit={this.createPhoto}>
+          <form onSubmit={this.createOrEdit}>
             <div>
               <input
                 className="form-control"
@@ -89,7 +110,7 @@ var PhotoForm = React.createClass({
             </div>
 
             <div>
-            <button className="btn btn-primary">Create Photo</button>
+            <button className="btn btn-primary">{buttonText}</button>
             </div>
 
             <div className="form-footer">

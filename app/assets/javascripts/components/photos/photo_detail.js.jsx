@@ -1,6 +1,12 @@
 var PhotoDetail = React.createClass({
+  mixins: [ReactRouter.History],
   getInitialState: function() {
-    return { photo: this.foundPhoto() }
+    return { photo: this.foundPhoto(), editing: '' }
+  },
+
+  _editCallback: function(photo){
+    // this.history.pushState(null, '/photo/' + photo.id, {});
+    this.setState({ editing: photo.image_url });
   },
 
   foundPhoto: function(){
@@ -27,8 +33,11 @@ var PhotoDetail = React.createClass({
     return url.replace(regexp, "$&" + manipulation);
   },
 
+  // _editCallback: function() {
+  //   ApiUtil.editPhoto(this.state.photo);
+  // },
+
   _deleteCallback: function() {
-    console.log('delete clicked');
     ApiUtil.deletePhoto(this.state.photo);
   },
 
@@ -37,8 +46,6 @@ var PhotoDetail = React.createClass({
     PhotoStore.addPhotosIndexChangeListener(this._onChange);
     PhotoStore.addPhotoDetailChangeListener(this._onChange);
     PhotoStore.addPhotoDeleteChangeListener(this._onDelete);
-    document.getElementById("photo-edit").addEventListener("click", this._editCallback, false);
-    document.getElementById("photo-download").addEventListener("click", this._downloadCallback, false);
     ApiUtil.fetchAllPhotos();
   },
 
@@ -46,6 +53,10 @@ var PhotoDetail = React.createClass({
     PhotoStore.removePhotosIndexChangeListener(this._onChange);
     PhotoStore.removePhotoDetailChangeListener(this._onChange);
     PhotoStore.removePhotoDeleteChangeListener(this._onDelete);
+  },
+
+  removeModal: function () {
+    this.setState({ editing: ''});
   },
 
   render: function () {
@@ -58,30 +69,39 @@ var PhotoDetail = React.createClass({
     if (typeof currentPhoto.description === 'string') {
       desc = <li><h4>Description: {currentPhoto.description}</h4></li>;
     }
+    var form;
+    if (this.state.editing !== '') {
+      form = <PhotoForm imageUrl={this.state.editing} removeModal={this.removeModal} editing={true} />;
+    } else {
+      form = '';
+    }
     return(
-      <div className="photo-detail">
-        <div className="photo-detail-background"></div>
-        <div className="photo-centered">
-            <img src={detailUrl} />
-            <div>
-              <li><h4>Title: {currentPhoto.title}</h4></li>
-              {desc}
-              <li><em>{currentPhoto.medium} on {currentPhoto.surface}</em></li>
-            </div>
+      <div>
+        <div className="photo-detail">
+          <div className="photo-detail-background"></div>
+          <div className="photo-centered">
+              <img src={detailUrl} />
+              <div>
+                <li><h4>Title: {currentPhoto.title}</h4></li>
+                {desc}
+                <li><em>{currentPhoto.medium} on {currentPhoto.surface}</em></li>
+              </div>
+          </div>
+          <div className="photo-detail-footer">
+            <h3>
+              <a id="photo-edit" onClick={this._editCallback.bind(this, currentPhoto)}>
+                <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+              </a>
+              <a href={currentPhoto.image_url} download={currentPhoto.title} id="photo-download">
+                <span className="glyphicon glyphicon-download" aria-hidden="true"></span>
+              </a>
+              <a href="#" id="photo-delete" onClick={this._deleteCallback}>
+                <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+              </a>
+            </h3>
+          </div>
         </div>
-        <div className="photo-detail-footer">
-          <h3>
-            <a href="#" id="photo-edit">
-              <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-            </a>
-            <a href={currentPhoto.image_url} download={currentPhoto.title} id="photo-download">
-              <span className="glyphicon glyphicon-download" aria-hidden="true"></span>
-            </a>
-            <a href="#" id="photo-delete" onClick={this._deleteCallback}>
-              <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
-            </a>
-          </h3>
-        </div>
+      {form}
       </div>
     );
   }
