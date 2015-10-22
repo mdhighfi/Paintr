@@ -10,6 +10,8 @@
 #  album_id    :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  medium      :string           not null
+#  surface     :string           not null
 #
 
 class Photo < ActiveRecord::Base
