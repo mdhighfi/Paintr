@@ -30,13 +30,7 @@ class Api::PhotosController < ApplicationController
 
   def update
     @photo = Photo.find(params[:id])
-    @photo.update(
-      title: params[:title],
-      description: params[:description],
-      medium: params[:medium],
-      surface: params[:surface],
-    )
-
+    @photo.update(photo_params)
     render :show
   end
 

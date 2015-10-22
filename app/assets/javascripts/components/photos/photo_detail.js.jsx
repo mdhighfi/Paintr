@@ -5,7 +5,6 @@ var PhotoDetail = React.createClass({
   },
 
   _editCallback: function(photo){
-    // this.history.pushState(null, '/photo/' + photo.id, {});
     this.setState({ editing: photo.image_url });
   },
 
@@ -32,10 +31,6 @@ var PhotoDetail = React.createClass({
     var manipulation = "h_1000\/";
     return url.replace(regexp, "$&" + manipulation);
   },
-
-  // _editCallback: function() {
-  //   ApiUtil.editPhoto(this.state.photo);
-  // },
 
   _deleteCallback: function() {
     ApiUtil.deletePhoto(this.state.photo);

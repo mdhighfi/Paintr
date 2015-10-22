@@ -54,7 +54,7 @@ window.ApiUtil = {
       method: "PATCH",
       data: {photo: photo},
       success: function (response) {
-        ApiActions.editSinglePhoto(response);
+        ApiActions.receiveSinglePhoto(response);
       }
     })
   }
