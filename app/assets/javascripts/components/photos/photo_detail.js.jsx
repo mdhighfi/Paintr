@@ -1,12 +1,9 @@
 var PhotoDetail = React.createClass({
   mixins: [ReactRouter.History],
   getInitialState: function() {
-    return { photo: this.foundPhoto(), editing: '' }
+    return { photo: this.foundPhoto(), editing: '', deleting: '' }
   },
 
-  _editCallback: function(photo){
-    this.setState({ editing: photo.image_url });
-  },
 
   foundPhoto: function(){
     var found = {};
@@ -32,8 +29,12 @@ var PhotoDetail = React.createClass({
     return url.replace(regexp, "$&" + manipulation);
   },
 
-  _deleteCallback: function() {
-    ApiUtil.deletePhoto(this.state.photo);
+  _editCallback: function(photo){
+    this.setState({ editing: photo.image_url });
+  },
+
+  _deleteCallback: function(photo) {
+    this.setState({ deleting: photo.image_url });
   },
 
   componentDidMount: function () {
@@ -52,6 +53,7 @@ var PhotoDetail = React.createClass({
 
   removeModal: function () {
     this.setState({ editing: ''});
+    this.setState({ deleting: ''});
   },
 
   render: function () {
@@ -64,13 +66,23 @@ var PhotoDetail = React.createClass({
     if (typeof currentPhoto.description === 'string') {
       desc = <li><h4>Description: {currentPhoto.description}</h4></li>;
     }
-    var form;
+    var form = '';
     if (this.state.editing !== '') {
-      // form = <PhotoForm imageUrl={this.state.editing} removeModal={this.removeModal} editing={true} />;
-      form = <PhotoForm photo={this.state.photo} imageUrl={this.state.editing} removeModal={this.removeModal} editing={true}/>
-    } else {
-      form = '';
+      form = <PhotoForm
+        photo={this.state.photo}
+        imageUrl={this.state.editing}
+        removeModal={this.removeModal}
+        editing={true}
+      />;
     }
+    if (this.state.deleting !== '') {
+      form = <Confirmation
+        photo={this.state.photo}
+        imageUrl={this.state.editing}
+        removeModal={this.removeModal}
+      />;
+    }
+    // debugger
     return(
       <div>
         <div className="photo-detail">
@@ -91,7 +103,7 @@ var PhotoDetail = React.createClass({
               <a href={currentPhoto.image_url} download={currentPhoto.title} id="photo-download">
                 <span className="glyphicon glyphicon-download" aria-hidden="true"></span>
               </a>
-              <a href="#" id="photo-delete" onClick={this._deleteCallback}>
+              <a id="photo-delete" onClick={this._deleteCallback.bind(this, currentPhoto)}>
                 <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
               </a>
             </h3>
