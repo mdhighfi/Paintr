@@ -18,13 +18,13 @@ class Api::AlbumsController < ApplicationController
   end
 
   def index
-    @albums = Album.where(
+    @albums = Album.includes(:photos).where(
       author_id: current_user.id
     )
   end
 
   def show
-    @album = Album.find(params[:id])
+    @album = Album.includes(:photos).find(params[:id])
   end
 
   def update
