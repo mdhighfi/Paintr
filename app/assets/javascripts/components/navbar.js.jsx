@@ -22,12 +22,10 @@ var Navbar = React.createClass({
   },
 
   _viewAlbumsCallback: function(){
-    console.log('view albums click');
     this.history.pushState(null, 'albums/' + window.CURRENT_USER_ID );
   },
 
   _viewPaintingsCallback: function(){
-    console.log('view paintings click');
     this.history.pushState(null, '/' );
   },
 
@@ -93,6 +91,3 @@ var Navbar = React.createClass({
     );
   }
 });
-
-
-// {"/#/albums/" + window.CURRENT_USER_ID}
