@@ -21,14 +21,14 @@ var Navbar = React.createClass({
     this.setState({ creatingAlbum: true });
   },
 
-  componentDidMount: function() {
-    document.getElementById("upload_widget_opener").addEventListener("click", this._uploadCallback, false);
-    document.getElementById("album-form-opener").addEventListener("click", this._createAlbumCallback, false);
+  _viewAlbumsCallback: function(){
+    console.log('view albums click');
+    this.history.pushState(null, 'albums/' + window.CURRENT_USER_ID );
   },
 
-  componentWillUnmount: function() {
-    document.getElementById("upload_widget_opener").removeEventListener("click", this._uploadCallback, false);
-    document.getElementById("album-form-opener").removeEventListener("click", this._createAlbumCallback, false);
+  _viewPaintingsCallback: function(){
+    console.log('view paintings click');
+    this.history.pushState(null, '/' );
   },
 
   removeModal: function () {
@@ -72,14 +72,14 @@ var Navbar = React.createClass({
                     <button type="submit" className="btn btn-default">Search</button>
                   </form>
                 </li>
-                <li><h3><a href="#" id="upload_widget_opener"><span className="glyphicon glyphicon-upload" aria-hidden="true"></span></a></h3></li>
+                <li><h3><a onClick={this._uploadCallback} id="upload_widget_opener"><span className="glyphicon glyphicon-upload" aria-hidden="true"></span></a></h3></li>
                 <li className="dropdown">
                   <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{window.CURRENT_USERNAME}<span className="caret"></span></a>
                   <ul className="dropdown-menu">
-                    <li><a href="#">My Photos</a></li>
-                    <li><a href="#">My Albums</a></li>
+                    <li><a onClick={this._viewPaintingsCallback}>My Paintings</a></li>
+                    <li><a onClick={this._viewAlbumsCallback} id="album-index-opener">My Albums</a></li>
                     <li role="separator" className="divider"></li>
-                    <li><a href="#" id="album-form-opener">Create Album</a></li>
+                    <li><a onClick={this._createAlbumCallback} id="album-form-opener">Create Album</a></li>
                     <li role="separator" className="divider"></li>
                     <li><a href="#" onClick={window.ApiUtil.signOut}>Sign Out</a></li>
                   </ul>
@@ -93,3 +93,6 @@ var Navbar = React.createClass({
     );
   }
 });
+
+
+// {"/#/albums/" + window.CURRENT_USER_ID}
