@@ -69,6 +69,7 @@ Photo.create!(
   title: "Good Times",
   image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445211196/van-gogh-13336296-1036-840_ubktnn.jpg',
   author_id: User.find_by_username("vincent").id,
+  album_id: 2,
   medium: "oil",
   surface: "canvas"
 )
@@ -77,6 +78,7 @@ Photo.create!(
   title: "Good Times",
   image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445211198/Van_Gogh_0013_wjqsq4.jpg',
   author_id: User.find_by_username("vincent").id,
+  album_id: 2,
   medium: "oil",
   surface: "canvas"
 )
@@ -85,6 +87,7 @@ Photo.create!(
   title: "Bad Times",
   image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445211200/Irises_go89vv.jpg',
   author_id: User.find_by_username("vincent").id,
+  album_id: 3,
   medium: "oil",
   surface: "canvas"
 )
@@ -93,6 +96,7 @@ Photo.create!(
   title: "Eatin' Pancakes",
   image_url: 'http://res.cloudinary.com/paintr/image/upload/v1445211199/Green_Field_ltkrll.jpg',
   author_id: User.find_by_username("vincent").id,
+  album_id: 3,
   medium: "oil",
   surface: "canvas"
 )
@@ -177,5 +181,16 @@ rest = Photo.create!(
 album = Album.create!(
   title: "My Favorites",
   description: "These are my favorites. I hope you like them.",
+  author_id: User.find_by_username("vincent").id,
+)
+
+album = Album.create!(
+  title: "My Second Favorites",
+  description: "Hello.",
+  author_id: User.find_by_username("vincent").id,
+)
+
+album = Album.create!(
+  title: "My Third Favorites",
   author_id: User.find_by_username("vincent").id,
 )
