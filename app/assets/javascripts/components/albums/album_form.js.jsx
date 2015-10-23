@@ -1,4 +1,4 @@
-var PhotoForm = React.createClass({
+var AlbumForm = React.createClass({
   mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
   blankAttrs: {
