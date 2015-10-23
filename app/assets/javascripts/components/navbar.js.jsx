@@ -30,7 +30,7 @@ var Navbar = React.createClass({
   },
 
   removeModal: function () {
-    this.setState({ uploading: ''});
+    this.setState({ uploading: '', creatingAlbum: false });
   },
 
   render: function(){

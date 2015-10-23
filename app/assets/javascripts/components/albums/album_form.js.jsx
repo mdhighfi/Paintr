@@ -26,7 +26,7 @@ var AlbumForm = React.createClass({
   editAlbum: function (e) {
     e.preventDefault();
     ApiUtil.editAlbum({
-      id: this.props.photo.id,
+      id: this.props.album.id,
       image_url: this.props.imageUrl,
       title: this.state.title,
       description: this.state.description,
@@ -58,7 +58,7 @@ var AlbumForm = React.createClass({
               <input
                 className="form-control"
                 type='text'
-                id='photo_title'
+                id='album_title'
                 placeholder='*title'
                 valueLink={this.linkState("title")}
               />
@@ -68,7 +68,7 @@ var AlbumForm = React.createClass({
               <input
                 className="form-control"
                 type='text'
-                id='photo_description'
+                id='album_description'
                 placeholder='description (optional)'
                 valueLink={this.linkState("description")}
               />
