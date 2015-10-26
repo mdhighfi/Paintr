@@ -18,11 +18,6 @@ window.PhotosIndex = React.createClass({
     PhotoStore.removePhotoDetailChangeListener(this._onChange);
   },
 
-  // compomentWillReceiveProps: function (props) {
-  //   debugger;
-  //   this.setState({ photos: props.photos });
-  // },
-
   render: function () {
     return(
       <div>

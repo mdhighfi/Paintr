@@ -1,7 +1,6 @@
 window.AlbumIndexItem = React.createClass({
   mixins: [ReactRouter.History],
    showDetail: function () {
-    //  debugger;
      this.history.pushState(null, '/album/' + this.props.album.id, {  });
    },
 

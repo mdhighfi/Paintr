@@ -38,21 +38,23 @@ var AlbumDetail = React.createClass({
 
   render: function() {
     var currentAlbum = this.state.album;
-    debugger;
+    var title;
 
     var albumShow;
     if (!currentAlbum) {
       albumShow = <div></div>;
+      title = '';
     } else {
       albumShow = currentAlbum.photos.map(function (photo) {
         return <PhotoIndexItem key={photo.id} photo={photo} />;
       });
+      title = currentAlbum.title;
     }
     return (
-      <div>
-        <h2>{currentAlbum.title}</h2>
+      <div className="paintr-title photo-centered">
+        <h2>{title}</h2>
         <div>
-          <ul className="album-photo-list">
+          <ul className="index-list">
             {albumShow}
           </ul>
         </div>
