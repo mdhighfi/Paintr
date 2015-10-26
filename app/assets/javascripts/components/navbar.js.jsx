@@ -22,7 +22,7 @@ var Navbar = React.createClass({
   },
 
   _viewAlbumsCallback: function(){
-    this.history.pushState(null, 'albums/' + window.CURRENT_USER_ID );
+    this.history.pushState(null, 'albums/');
   },
 
   _viewPaintingsCallback: function(){

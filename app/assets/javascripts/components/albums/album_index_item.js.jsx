@@ -1,12 +1,13 @@
 window.AlbumIndexItem = React.createClass({
   mixins: [ReactRouter.History],
    showDetail: function () {
-     this.history.pushState(null, '/album/' + this.props.album.id, {});
+     debugger;
+     this.history.pushState(null, '/album/' + this.props.album.id, {  });
    },
 
    _manipulateImage: function(url) {
      var regexp = /\/upload\//;
-     var manipulation = "h_400\/";
+     var manipulation = "h_300\/";
      return url.replace(regexp, "$&" + manipulation);
    },
 
@@ -19,7 +20,7 @@ window.AlbumIndexItem = React.createClass({
      }
      return(
        <div onClick={this.showDetail} className="album-index-item">
-         <img src={albumCoverUrl} />
+         <img src={albumCoverUrl} className="album-cover"/>
          <div>
            <li><h4>Title: {currentAlbum.title}</h4></li>
            {desc}
