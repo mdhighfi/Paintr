@@ -4,6 +4,7 @@
   var ALBUM_DELETE_CHANGE_EVENT = "albumDeleteChange";
 
   var _albums = [];
+  var _activeAlbum = {};
 
   var resetAlbums = function (albums) {
     _albums = albums;
@@ -11,9 +12,10 @@
 
   var resetAlbum = function (album) {
     var changed = false;
-    _albums.forEach(function (p) {
-      if(p.id === album.id) {
-        _albums[_albums.indexOf(p)] = album;
+    _albums.forEach(function (al) {
+      if(al.id === album.id) {
+        _albums[_albums.indexOf(al)] = album;
+        _activeAlbum = { album: album}
         changed = true;
       }
     });
@@ -49,6 +51,14 @@
 
       return album;
     },
+
+    // setActiveAlbum: function(id) {
+    //   _activeAlbum = { album: this.find(id) }
+    // },
+    //
+    // getActiveAlbum: function() {
+    //   _activeAlbum.album
+    // },
 
     addAlbumDetailChangeListener: function (callback) {
       this.on(ALBUM_DETAIL_CHANGE_EVENT, callback);
