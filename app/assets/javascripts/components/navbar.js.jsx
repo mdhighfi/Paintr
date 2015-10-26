@@ -74,7 +74,7 @@ var Navbar = React.createClass({
                 <li className="dropdown">
                   <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{window.CURRENT_USERNAME}<span className="caret"></span></a>
                   <ul className="dropdown-menu">
-                    <li><a onClick={this._viewPaintingsCallback}>My Paintings</a></li>
+                    <li><a onClick={this._viewPaintingsCallback} id="paintings-index-opener">My Paintings</a></li>
                     <li><a onClick={this._viewAlbumsCallback} id="album-index-opener">My Albums</a></li>
                     <li role="separator" className="divider"></li>
                     <li><a onClick={this._createAlbumCallback} id="album-form-opener">Create Album</a></li>
