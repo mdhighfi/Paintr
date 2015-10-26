@@ -11,15 +11,17 @@
   };
 
   var resetAlbum = function (album) {
-    var changed = false;
+    // var changed = false;
     _albums.forEach(function (al) {
+      debugger;
       if(al.id === album.id) {
-        _albums[_albums.indexOf(al)] = album;
+        // _albums[_albums.indexOf(al)] = album;
         _activeAlbum = { album: album}
-        changed = true;
+        // changed = true;
       }
     });
-    if(!changed) { _albums.push(album); }
+    debugger;
+    // if(!changed) { _albums.push(album); }
   };
 
   var deleteAlbum = function (album) {
@@ -56,9 +58,10 @@
     //   _activeAlbum = { album: this.find(id) }
     // },
     //
-    // getActiveAlbum: function() {
-    //   _activeAlbum.album
-    // },
+    getActiveAlbum: function() {
+      debugger;
+      return _activeAlbum.album
+    },
 
     addAlbumDetailChangeListener: function (callback) {
       this.on(ALBUM_DETAIL_CHANGE_EVENT, callback);

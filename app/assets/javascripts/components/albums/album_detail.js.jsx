@@ -5,7 +5,7 @@ var AlbumDetail = React.createClass({
 
   foundAlbum: function(){
     var found = {};
-    debugger
+    // debugger
     AlbumStore.all().forEach(function(album){
       if (album.id === parseInt(this.props.params.albumId)) {
         found = album;
@@ -15,13 +15,14 @@ var AlbumDetail = React.createClass({
   },
 
   _onChange: function() {
+    debugger;
     this.setState({ album: AlbumStore.getActiveAlbum() });
   },
 
   componentDidMount: function() {
     AlbumStore.addAlbumDetailChangeListener(this._onChange);
     ApiUtil.fetchSingleAlbum(this.props.params.albumId);
-    debugger;
+    // debugger;
     // fetch the album
     // add a listener on album store to update the album
   },
@@ -42,6 +43,7 @@ var AlbumDetail = React.createClass({
 
   render: function() {
     var currentAlbum = this.state.album;
+    debugger;
 
     var albumShow;
     if (!currentAlbum) {
