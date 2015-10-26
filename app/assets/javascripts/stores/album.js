@@ -13,14 +13,12 @@
   var resetAlbum = function (album) {
     // var changed = false;
     _albums.forEach(function (al) {
-      debugger;
       if(al.id === album.id) {
         // _albums[_albums.indexOf(al)] = album;
         _activeAlbum = { album: album}
         // changed = true;
       }
     });
-    debugger;
     // if(!changed) { _albums.push(album); }
   };
 
@@ -59,7 +57,6 @@
     // },
     //
     getActiveAlbum: function() {
-      debugger;
       return _activeAlbum.album
     },
 
