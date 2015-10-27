@@ -52,7 +52,9 @@ var Navbar = React.createClass({
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand paintr-title">Paintr</a>
+              <div className="paintr-title nav-title">
+                <img src="http://res.cloudinary.com/paintr/image/upload/h_60/v1445907252/paintr_logo_qczqyp.png" />Paintr
+              </div>
             </div>
 
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -62,14 +64,6 @@ var Navbar = React.createClass({
 
               </ul>
               <div className="nav navbar-nav navbar-right">
-                <li>
-                  <form className="navbar-form" role="search">
-                    <div className="form-group">
-                      <input type="text" className="form-control" placeholder="tag, artist, medium"/>
-                    </div>
-                    <button type="submit" className="btn btn-default">Search</button>
-                  </form>
-                </li>
                 <li><h3><a onClick={this._uploadCallback} id="upload_widget_opener"><span className="glyphicon glyphicon-upload" aria-hidden="true"></span></a></h3></li>
                 <li className="dropdown">
                   <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{window.CURRENT_USERNAME}<span className="caret"></span></a>

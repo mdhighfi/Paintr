@@ -16,6 +16,21 @@
  .extra-margin-bottom {
    margin-bottom: 90px;
  }
+ //
+ // .paintr-logo {
+ //   position: absolute;
+ //   left: 5px;
+ //   top: 5px;
+ //   z-index: 30;
+ // }
+
+ .nav-title {
+   font-size: 25px;
+   img {
+     position: relative;
+      top: -6px;
+   }
+ }
 
 .navbar {
   max-height: 50px;
